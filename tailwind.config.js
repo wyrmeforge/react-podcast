@@ -32,7 +32,7 @@ export default {
       },
       spacing: {
         6: '24px',
-        9: '48px',
+        9: '36px',
         15: '60px',
         19: '76px',
         25: '100px',
@@ -60,6 +60,7 @@ export default {
       dropShadow: {
         hover: '3px 3px 0 rgba(0,0,0,.25)',
         hoverXl: '6px 6px 0 rgba(0,0,0,.25)',
+        hoverXlRed: '6px 6px 0 #CD4631',
         cover: '12px 12px 0 #81ADC8',
         card: '10px 10px 0 #81ADC8',
         dark: '10px 10px 0 #000',

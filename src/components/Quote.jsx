@@ -13,7 +13,7 @@ const Quote = ({
   jobTitle,
 }) => {
   const containerClasses = tcl(
-    'bg-champagne rounded-tiny py-10 flex flex-col items-center relative',
+    'bg-champagne rounded-12 py-10 flex flex-col items-center relative',
     className,
   );
 

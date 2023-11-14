@@ -54,7 +54,7 @@ const HeroSection = () => (
       </p>
       <Button xl>Subscribe</Button>
     </MaxWidthContainer>
-    <Carousel className='py-30' centerMode infinite centerPadding='-15'>
+    <Carousel className='py-30' centerMode infinite autoplay centerPadding='-15'>
       {recentEpisodes?.map((item, idx) => (
         <PodcastCover className='w-[373px] mb-5 mr-5 h-[373px]' key={idx} {...item} />
       ))}

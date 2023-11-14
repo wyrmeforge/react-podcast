@@ -8,10 +8,10 @@ const Header = () => (
     <MaxWidthContainer customClassName='flex items-center justify-between'>
       <Navigation customClassName='mr-[123px]' />
       <div className='flex items-center'>
-        <Button bordered className='uppercase font-bold mr-5'>
-          RECENT EPISODES
+        <Button bordered className='font-bold mr-5 bg-champagne'>
+          Recent episodes
         </Button>
-        <Button className='uppercase font-bold'>SUBSCRIBE</Button>
+        <Button className='font-bold'>SUBSCRIBE</Button>
       </div>
     </MaxWidthContainer>
   </header>

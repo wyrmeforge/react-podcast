@@ -1,23 +1,23 @@
 import React from 'react';
 import { tcl } from '../utils/styles.js';
 
-const Button = ({ className, onClick, children, bordered, xl }) => {
+const Button = ({ className, onClick, children, bordered, type = 'button', xl }) => {
   const buttonVariations = tcl({
-    'h-[41px] px-6': !xl,
-    'h-[65px] px-9 ': xl,
-    'hover:drop-shadow-hoverXl': xl && !bordered,
-    'border-2 border-black': bordered,
-    'bg-black text-white hover:drop-shadow-hover': !bordered,
+    'py-3 px-6 max-h-[41px]': !xl,
+    'py-5 px-9 max-h-[62px]': xl,
+    'border-2 border-black btn': bordered,
+    'bg-black text-white ': !bordered,
+    'hover:drop-shadow-hoverXl': xl,
   });
 
   const buttonClasses = tcl(
-    'rounded-8 flex justify-center items-center hover:cursor-pointer !text-14 transition-all uppercase font-bold',
+    'rounded-8 flex justify-center items-center hover:cursor-pointer hover:drop-shadow-hover transition-all !text-14 leading-normal uppercase font-bold',
     buttonVariations,
     className,
   );
 
   return (
-    <button onClick={onClick} className={buttonClasses}>
+    <button type={type} onClick={onClick} className={buttonClasses}>
       {children}
     </button>
   );

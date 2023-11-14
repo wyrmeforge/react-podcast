@@ -3,7 +3,7 @@ import AppLayout from '../containers/AppLayout.jsx';
 import HomePage from '../containers/HomePage/HomePage.jsx';
 import * as routerPaths from '../consts/router/routerPaths.js';
 import AboutPage from '../containers/AboutPage/AboutPage.jsx';
-import NotFound from '../pages/NotFound.jsx';
+import NotFound from '../containers/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
