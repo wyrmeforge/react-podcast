@@ -1,0 +1,14 @@
+$fonts-path: '../fonts'
+
+
+@mixin font-face($file-name, $weight)
+  @font-face
+    font-family: 'MontserratAlternates'
+    font-weight: $weight
+    font-style: normal
+    src: url('../fonts/#{$file-name}.ttf') format('truetype')
+    font-display: swap
+
+
+@include font-face('MontserratAlternates-Medium', 500)
+@include font-face('MontserratAlternates-Bold', 700)
