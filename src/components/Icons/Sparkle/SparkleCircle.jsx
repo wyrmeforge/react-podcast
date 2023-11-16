@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const SparkleCircle = () => (
   <Icon width='105' height='105'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const Quote = ({ className }) => (
   <Icon className={className} width='42' height='34'>

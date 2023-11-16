@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const WormFace = ({ className }) => (
   <Icon width='79' height='78' className={className}>

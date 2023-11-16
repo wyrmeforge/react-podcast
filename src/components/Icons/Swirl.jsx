@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const Swirl = ({ className }) => (
   <Icon width='326' height='593' className={className}>

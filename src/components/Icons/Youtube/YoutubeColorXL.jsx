@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const YoutubeColorXl = () => (
   <Icon width='125' height='28'>

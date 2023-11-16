@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const Scribble = ({ stroke = '#000' }) => {
   const iconClasses = `absolute bottom-[-77px] z-20 left-[calc(50%-75px)]`;

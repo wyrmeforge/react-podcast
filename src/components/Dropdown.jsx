@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { tcl } from '../utils/styles.js';
 
-const Dropdown = ({ trigger, menu, open }) => {
-  const [isOpen, setIsOpen] = useState(open);
+const Dropdown = ({ trigger, menu, menuClassName }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(!isOpen);
+
+  const menuClasses = tcl('absolute flex flex-col z-20', menuClassName);
 
   return (
     <div className='relative'>
@@ -11,9 +14,9 @@ const Dropdown = ({ trigger, menu, open }) => {
         onClick: handleOpen,
       })}
       {isOpen ? (
-        <ul className='absolute flex flex-col z-20'>
+        <ul className={menuClasses}>
           {menu?.map((menuItem, idx) => (
-            <li key={idx}>
+            <li className='mb-1' key={idx}>
               {React.cloneElement(menuItem, {
                 onClick: () => {
                   menuItem?.props?.onClick?.();

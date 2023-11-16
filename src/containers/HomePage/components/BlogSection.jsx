@@ -22,7 +22,7 @@ const BlogItem = ({ category, title, description, tags, date }) => {
   );
 };
 
-const BlogSection = () => {
+const BlogSection = ({ id }) => {
   const blogs = [
     {
       category: 'Podcast',
@@ -43,6 +43,7 @@ const BlogSection = () => {
   ];
   return (
     <SectionContainer
+      id={id}
       className='bg-champagne'
       title='Article and News'
       subtitle='News, tips, tricks and more'

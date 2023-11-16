@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const SparkleFork = ({ className }) => (
   <Icon className={className} width='240' height='240'>

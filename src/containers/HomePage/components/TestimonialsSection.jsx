@@ -4,7 +4,7 @@ import SectionContainer from '../../../components/Structure/SectionContainer.jsx
 import Quote from '../../../components/Quote.jsx';
 import { SpotifyWhite } from '../../../components/Icons/index.js';
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({ id }) => {
   const testimonialsCarousel = [
     {
       text:
@@ -32,18 +32,25 @@ const TestimonialsSection = () => {
 
   return (
     <SectionContainer
+      id={id}
       title='What our listeners say'
       titleWithIcon
-      titleClassName='before:!left-[-70px]'
       subtitle='Their experience throughout every platform'
       className='bg-alice pb-[208px]'
     >
-      <Carousel arrowClassName='-bottom-25' arrows infinite className='pl-35 flex'>
+      <Carousel
+        arrowClassName='-bottom-25'
+        arrows={false}
+        infinite
+        centerMode
+        autoplay
+        className='pl-35 flex'
+      >
         {testimonialsCarousel.map((item, idx) => (
           <Quote
             key={idx}
             textClassName='pt-9 px-0 pb-8 max-w-none text-23 leading-160 font-medium text-left'
-            className='bg-white w-[570px] rounded-8 items-start px-10 h-[360px] mr-5'
+            className='bg-white w-[570px] rounded-8 items-start px-10 h-[360px] mr-5 '
             {...item}
           />
         ))}

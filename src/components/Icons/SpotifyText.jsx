@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const SpotifyText = ({ withText = false, width = '129', height = '34' }) => (
   <Icon width={width} height={height}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const SpotifyWhite = ({ fill = 'white' }) => (
   <Icon width='24' height='24'>

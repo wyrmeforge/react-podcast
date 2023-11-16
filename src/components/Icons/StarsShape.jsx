@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const StarsShape = ({ className }) => (
   <Icon width='156' height='217' className={className}>

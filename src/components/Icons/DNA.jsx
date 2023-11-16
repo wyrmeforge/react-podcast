@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon.jsx';
+import Icon from './Icon.jsx';
 
 const Dna = ({ className }) => (
   <Icon width='124' height='124' className={className}>

@@ -56,7 +56,7 @@ const PricingCard = ({ name, description, price, included, isTrending = false })
   );
 };
 
-const PricingSection = () => {
+const PricingSection = ({ id }) => {
   const rates = [
     {
       name: 'Member',
@@ -96,6 +96,7 @@ const PricingSection = () => {
 
   return (
     <SectionContainer
+      id={id}
       iconClassName='scale-[0.5] left-0 top-0 rotate-[250deg]'
       titleWithIcon
       title='Become our sponsor'

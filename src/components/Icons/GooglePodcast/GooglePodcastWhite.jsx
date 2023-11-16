@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const GooglePodcastWhite = ({ className }) => (
   <Icon width='24' height='24' className={className}>

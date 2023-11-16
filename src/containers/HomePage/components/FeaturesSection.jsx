@@ -11,8 +11,10 @@ import {
   ScribbleWavyIcon,
 } from '../../../components/Icons/index.js';
 import Fire from '../../../components/Icons/Fire.jsx';
+import { scrollToSection } from '../../../utils/router.js';
+import * as routePaths from '../../../consts/router/routerPaths.js';
 
-const FeaturesSection = () => {
+const FeaturesSection = ({ id }) => {
   const features = [
     {
       icon: <ScribbleBlue />,
@@ -48,6 +50,7 @@ const FeaturesSection = () => {
 
   return (
     <SectionContainer
+      id={id}
       title='Membership benefits'
       subtitle='Become our sponsor and get all benefits'
       iconClassName='top-[-170px] right-30'
@@ -66,7 +69,7 @@ const FeaturesSection = () => {
             </div>
           ))}
         </div>
-        <Button className='mx-auto' xl>
+        <Button onClick={() => scrollToSection(routePaths.PRICING)} className='mx-auto' xl>
           See pricing
         </Button>
       </MaxWidthContainer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const ScribbleWavy = () => (
   <Icon width='292' height='292'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const GooglePodcastColorM = () => (
   <Icon width='122' height='22'>
