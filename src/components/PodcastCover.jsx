@@ -1,24 +1,27 @@
 import React from 'react';
 import { tcl } from '../utils/styles.js';
 import { GooglePodcastWhite, SpotifyWhite, YoutubeWhite } from './Icons/index.js';
+import Image from './Image.jsx';
 
-const PodcastCover = ({ title, image, className, iconClassName, onClick }) => {
+const PodcastCover = ({ title, image, availablePlatforms, className, iconClassName, onClick }) => {
   const containerClasses = tcl(
-    'rounded-12 p-5 flex flex-col justify-between hover:drop-shadow-cover hover:cursor-pointer transition-all',
+    'rounded-12 p-5 flex flex-col relative justify-between hover:drop-shadow-cover hover:cursor-pointer transition-all',
     className,
   );
 
-  const containerStyles = { backgroundImage: `url(http://localhost:1337${image})` };
-  const iconClasses = tcl('flex w-full max-w-[92px] justify-between self-end', iconClassName);
+  const platformIcons = {
+    googlePodcast: <GooglePodcastWhite key={1} />,
+    youtube: <YoutubeWhite key={2} />,
+    spotify: <SpotifyWhite key={3} />,
+  };
 
   return (
-    <div style={containerStyles} className={containerClasses} onClick={onClick}>
-      <div className={iconClasses}>
-        <GooglePodcastWhite />
-        <SpotifyWhite />
-        <YoutubeWhite />
+    <div className={containerClasses} onClick={onClick}>
+      <div className={tcl('flex justify-between gap-4 self-end z-30', iconClassName)}>
+        {availablePlatforms?.map((platform) => platformIcons[platform])}
       </div>
-      <div className='font-bold text-37 leading-140 tracking-[-0.08em] text-blue'>{title}</div>
+      <div className='font-bold text-37 leading-140 tracking-[-0.08em] text-blue z-30'>{title}</div>
+      <Image src={image} className='w-full h-full absolute left-0 top-0 rounded-12 ' />
     </div>
   );
 };

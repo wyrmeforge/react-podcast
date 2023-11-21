@@ -3,7 +3,6 @@ import SectionContainer from '../../../components/Structure/SectionContainer.jsx
 import EpisodeCard from '../../../components/EpisodeCard.jsx';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Button from '../../../components/Button.jsx';
-import { SparkleForkIcon } from '../../../components/Icons/index.js';
 import { useSelector } from 'react-redux';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +16,10 @@ const ContentSection = ({ id }) => {
     navigate(`${routePaths.EPISODES}/${episodeId}`);
   };
 
+  const onBrowseClick = () => {
+    navigate(routePaths.EPISODES);
+  };
+
   return (
     <SectionContainer
       id={id}
@@ -25,13 +28,12 @@ const ContentSection = ({ id }) => {
       className='bg-champagne'
     >
       <MaxWidthContainer>
-        <SparkleForkIcon className='absolute -right-[140px] -top-[170px]' />
         <div className='grid grid-cols-2 gap-5 mb-25'>
           {episodes?.map(({ attributes, id }) => (
             <EpisodeCard onClick={() => onCardClick(id)} key={id} {...attributes} />
           ))}
         </div>
-        <Button xl className='mx-auto' onClick={() => navigate(routePaths.EPISODES)}>
+        <Button xl className='mx-auto' onClick={onBrowseClick}>
           Browse all episodes
         </Button>
       </MaxWidthContainer>

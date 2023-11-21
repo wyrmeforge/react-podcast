@@ -12,7 +12,6 @@ import Loader from '../components/Loader.jsx';
 
 const AppLayout = () => {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
-
   const dispatch = useDispatch();
 
   const initApp = async () => {

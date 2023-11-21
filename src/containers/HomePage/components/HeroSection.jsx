@@ -44,6 +44,7 @@ const HeroSection = () => {
           <PodcastCover
             title={attributes?.title}
             image={attributes?.image?.data?.attributes?.url}
+            availablePlatforms={attributes?.platforms}
             key={id}
             className='w-[373px] mb-5 mr-5 h-[373px]'
             onClick={() => onPodcastClick(id)}

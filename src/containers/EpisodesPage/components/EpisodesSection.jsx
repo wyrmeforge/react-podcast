@@ -7,16 +7,16 @@ import { useSelector } from 'react-redux';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
 import { tcl } from '../../../utils/styles.js';
 
-const tags = ['All', 'Business', 'Comedy', 'Education', 'Health', 'News', 'Tech'];
+const tags = ['all', 'business', 'comedy', 'education', 'health', 'news', 'tech'];
 
 const EpisodesSection = ({ podcastId, setCurrentEpisodeId }) => {
   const [activeTab, setActiveTab] = useState(tags[0]);
   const episodes = useSelector(selectAllPodcasts);
 
   const filteredEpisodes = useMemo(() => {
-    return episodes.filter((item) =>
-      activeTab === tags[0] ? true : item.tags.includes(activeTab),
-    );
+    if (activeTab === tags[0]) return episodes;
+
+    return episodes.filter(({ attributes }) => attributes.tags.includes(activeTab));
   }, [episodes, activeTab]);
 
   const onCardClick = (id) => {

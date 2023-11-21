@@ -13,6 +13,8 @@ export const GET_ALL_PODCASTS = gql(`
          episodeTime
          episode
          platforms
+         url
+         isFeatured
          image {
              data {
                attributes {

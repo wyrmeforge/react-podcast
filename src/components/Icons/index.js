@@ -25,3 +25,4 @@ export { default as YoutubeColorXL } from './Youtube/YoutubeColorXL.jsx';
 export { default as SparkleCircleIcon } from './Sparkle/SparkleCircle.jsx';
 export { default as SparkleForkIcon } from './Sparkle/SparkleFork.jsx';
 export { default as ScribbleWavyIcon } from './Scribble/ScribbleWavy.jsx';
+export { default as PlayIcon } from './Play.jsx';
