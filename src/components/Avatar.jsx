@@ -1,12 +1,15 @@
 import React from 'react';
-import avatar from '../assets/images/avatar.jpg';
 import { tcl } from '../utils/styles.js';
+import Image from './Image.jsx';
 
-const Avatar = ({ className }) => {
+const Avatar = ({ className, imageUrl }) => {
   const containerClasses = tcl('w-12 h-12', className);
+
+  if (!imageUrl) return;
+
   return (
     <div className={containerClasses}>
-      <img alt='User Picture' className='w-auto h-auto rounded-full' src={avatar} />
+      <Image alt='User Picture' className='w-full h-full rounded-full' src={imageUrl} />
     </div>
   );
 };

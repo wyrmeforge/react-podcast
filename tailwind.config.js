@@ -30,6 +30,9 @@ export default {
       montsalt: 'MontserratAlternates',
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
       backgroundImage: {
         sparkle: "url('src/assets/images/Sparkle.svg')",
       },

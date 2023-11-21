@@ -4,6 +4,43 @@ import Button from '../../../components/Button.jsx';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import { tcl } from '../../../utils/styles.js';
 
+const rates = [
+  {
+    name: 'Member',
+    description: 'Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod tempor.',
+    price: '9.99',
+    included: [
+      'Exclusive Content',
+      '5% Discount on Merch',
+      'Join the Community',
+      'Livestreaming Access',
+    ],
+  },
+  {
+    isTrending: true,
+    name: 'Family',
+    description: 'Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod tempor.',
+    price: '14.99',
+    included: [
+      'Everything in Tier 1',
+      '5% Discount on Merch',
+      'Join the Community',
+      'Livestreaming Access',
+    ],
+  },
+  {
+    name: 'Official',
+    description: 'Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod tempor.',
+    price: '29.99',
+    included: [
+      'Everything in Tier 2',
+      '5% Discount on Merch',
+      'Join the Community',
+      'Livestreaming Access',
+    ],
+  },
+];
+
 const CardContainer = ({ className, isTrending, children }) => {
   const containerClassName = tcl(
     'w-[373px] h-[357px] rounded-8 border-[1.5px] border-black text-left',
@@ -56,59 +93,18 @@ const PricingCard = ({ name, description, price, included, isTrending = false })
   );
 };
 
-const PricingSection = ({ id }) => {
-  const rates = [
-    {
-      name: 'Member',
-      description: 'Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod tempor.',
-      price: '9.99',
-      included: [
-        'Exclusive Content',
-        '5% Discount on Merch',
-        'Join the Community',
-        'Livestreaming Access',
-      ],
-    },
-    {
-      isTrending: true,
-      name: 'Family',
-      description: 'Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod tempor.',
-      price: '14.99',
-      included: [
-        'Everything in Tier 1',
-        '5% Discount on Merch',
-        'Join the Community',
-        'Livestreaming Access',
-      ],
-    },
-    {
-      name: 'Official',
-      description: 'Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod tempor.',
-      price: '29.99',
-      included: [
-        'Everything in Tier 2',
-        '5% Discount on Merch',
-        'Join the Community',
-        'Livestreaming Access',
-      ],
-    },
-  ];
-
-  return (
-    <SectionContainer
-      id={id}
-      iconClassName='scale-[0.5] left-0 top-0 rotate-[250deg]'
-      titleWithIcon
-      title='Become our sponsor'
-      subtitle='Get exclusive episodes, merch and more'
-    >
-      <MaxWidthContainer customClassName='flex gap-5'>
-        {rates?.map((rate, idx) => (
-          <PricingCard key={idx} {...rate} />
-        ))}
-      </MaxWidthContainer>
-    </SectionContainer>
-  );
-};
+const PricingSection = ({ id }) => (
+  <SectionContainer
+    id={id}
+    title='Become our sponsor'
+    subtitle='Get exclusive episodes, merch and more'
+  >
+    <MaxWidthContainer customClassName='flex gap-5'>
+      {rates?.map((rate, idx) => (
+        <PricingCard key={idx} {...rate} />
+      ))}
+    </MaxWidthContainer>
+  </SectionContainer>
+);
 
 export default PricingSection;

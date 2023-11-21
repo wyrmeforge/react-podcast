@@ -4,7 +4,7 @@ import Divider from './Divider.jsx';
 
 const Tab = ({ label, active, onClick }) => (
   <div
-    className={tcl('hover:cursor-pointer text-23 font-medium text-grey leading-160', {
+    className={tcl('hover:cursor-pointer text-23 font-medium text-grey leading-160 pb-5', {
       'text-vermillion font-bold': active,
     })}
     onClick={onClick}
@@ -14,19 +14,15 @@ const Tab = ({ label, active, onClick }) => (
 );
 
 const Tabs = ({ tabs, activeTab, setActiveTab }) => {
-  const handleTabClick = (label) => {
-    setActiveTab(label);
-  };
-
   return (
     <>
-      <div className='flex justify-between pb-5'>
+      <div className='flex justify-between'>
         {tabs.map((tab, index) => (
           <Tab
             key={index}
             label={tab.label}
             active={tab.label === activeTab}
-            onClick={() => handleTabClick(tab.label)}
+            onClick={() => setActiveTab(tab.label)}
           />
         ))}
       </div>

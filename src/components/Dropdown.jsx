@@ -4,14 +4,12 @@ import { tcl } from '../utils/styles.js';
 const Dropdown = ({ trigger, menu, menuClassName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = () => setIsOpen(!isOpen);
-
   const menuClasses = tcl('absolute flex flex-col z-20', menuClassName);
 
   return (
     <div className='relative'>
       {React.cloneElement(trigger, {
-        onClick: handleOpen,
+        onClick: () => setIsOpen(!isOpen),
       })}
       {isOpen ? (
         <ul className={menuClasses}>

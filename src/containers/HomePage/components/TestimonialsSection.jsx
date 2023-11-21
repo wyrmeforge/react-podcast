@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from '../../../components/Carousel/Carousel.jsx';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 import Quote from '../../../components/Quote.jsx';
-import { SpotifyWhite } from '../../../components/Icons/index.js';
+import {
+  GooglePodcastColorM,
+  SpotifyColorM,
+  YoutubeColorM,
+} from '../../../components/Icons/index.js';
+import reviewsService from '../../../services/reviewsService/reviewsService.js';
+import Loader from '../../../components/Loader.jsx';
 
 const TestimonialsSection = ({ id }) => {
-  const testimonialsCarousel = [
-    {
-      text:
-        'Lorem ipsum dolor sit amet consectet \n' +
-        'piscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. ',
-      username: 'Luna lovegood,',
-      jobTitle: 'Spotify',
-      jobIcon: <SpotifyWhite fill='#1ED760' />,
-    },
-    {
-      text:
-        'Lorem ipsum dolor sit amet consectet \n' +
-        'piscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. ',
-      username: 'Luna lovegood,',
-      jobTitle: 'Spotify',
-    },
-    {
-      text:
-        'Lorem ipsum dolor sit amet consectet \n' +
-        'piscing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. ',
-      username: 'Luna lovegood,',
-      jobTitle: 'Spotify',
-    },
-  ];
+  const [reviews, setReviews] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const fetchReviews = async () => {
+    try {
+      const { data } = await reviewsService.getAllReviews();
+      setReviews(data);
+    } catch (error) {
+      console.error('Error fetching reviews:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  const jobIcons = {
+    googlePodcast: <GooglePodcastColorM />,
+    spotify: <SpotifyColorM />,
+    youtube: <YoutubeColorM />,
+  };
+
+  if (!loading && !reviews) return null;
 
   return (
     <SectionContainer
@@ -38,23 +45,23 @@ const TestimonialsSection = ({ id }) => {
       subtitle='Their experience throughout every platform'
       className='bg-alice pb-[208px]'
     >
-      <Carousel
-        arrowClassName='-bottom-25'
-        arrows={false}
-        infinite
-        centerMode
-        autoplay
-        className='pl-35 flex'
-      >
-        {testimonialsCarousel.map((item, idx) => (
-          <Quote
-            key={idx}
-            textClassName='pt-9 px-0 pb-8 max-w-none text-23 leading-160 font-medium text-left'
-            className='bg-white w-[570px] rounded-8 items-start px-10 h-[360px] mr-5 '
-            {...item}
-          />
-        ))}
-      </Carousel>
+      {loading ? (
+        <Loader className='h-10 bg-alice' />
+      ) : (
+        <Carousel arrows arrowClassName='-bottom-25' infinite className='pl-35 flex'>
+          {reviews?.map(({ id, attributes }) => (
+            <Quote
+              key={id}
+              text={attributes?.text}
+              username={attributes?.userName}
+              jobIcon={jobIcons[attributes?.platform]}
+              avatarSrc={attributes?.userAvatar?.data?.attributes?.url}
+              textClassName='pt-9 px-0 pb-8 max-w-none text-23 leading-160 font-medium text-left'
+              className='bg-white w-[570px] rounded-8 items-start px-10 h-[360px] mr-5 justify-between'
+            />
+          ))}
+        </Carousel>
+      )}
     </SectionContainer>
   );
 };

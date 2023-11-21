@@ -13,6 +13,10 @@ const ContentSection = ({ id }) => {
   const episodes = useSelector(selectAllPodcasts);
   const navigate = useNavigate();
 
+  const onCardClick = (episodeId) => {
+    navigate(`${routePaths.EPISODES}/${episodeId}`);
+  };
+
   return (
     <SectionContainer
       id={id}
@@ -22,12 +26,12 @@ const ContentSection = ({ id }) => {
     >
       <MaxWidthContainer>
         <SparkleForkIcon className='absolute -right-[140px] -top-[170px]' />
-        <div className='grid grid-cols-2 grid-rows-3 gap-5 mb-25'>
-          {episodes?.map((item, idx) => (
-            <EpisodeCard onClick={() => navigate(`details/${item.id}`)} key={idx} {...item} />
+        <div className='grid grid-cols-2 gap-5 mb-25'>
+          {episodes?.map(({ attributes, id }) => (
+            <EpisodeCard onClick={() => onCardClick(id)} key={id} {...attributes} />
           ))}
         </div>
-        <Button xl className='mx-auto' onClick={() => navigate(routePaths.PODCAST_DETAILS)}>
+        <Button xl className='mx-auto' onClick={() => navigate(routePaths.EPISODES)}>
           Browse all episodes
         </Button>
       </MaxWidthContainer>

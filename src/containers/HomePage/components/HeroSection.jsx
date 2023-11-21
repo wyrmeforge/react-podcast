@@ -19,7 +19,11 @@ const HeroSection = () => {
   const podcasts = useSelector(selectAllPodcasts);
 
   const onPodcastClick = (podcastId) => {
-    navigate(`${routePaths.PODCAST_DETAILS}/${podcastId}`);
+    navigate(`${routePaths.EPISODES}/${podcastId}`);
+  };
+
+  const onSubscribeClick = () => {
+    navigate(routePaths.PRICING, { replace: true });
   };
 
   return (
@@ -31,15 +35,18 @@ const HeroSection = () => {
         <p className='mb-15 max-w-[374px] text-grey text-16'>
           We cover all kinds of categories and a weekly special guest.
         </p>
-        <Button xl>Subscribe</Button>
+        <Button onClick={onSubscribeClick} xl>
+          Subscribe
+        </Button>
       </MaxWidthContainer>
       <Carousel className='py-30' centerMode infinite autoplay centerPadding='-15'>
-        {podcasts?.map((item) => (
+        {podcasts?.map(({ attributes, id }) => (
           <PodcastCover
-            key={item.id}
-            data={item}
+            title={attributes?.title}
+            image={attributes?.image?.data?.attributes?.url}
+            key={id}
             className='w-[373px] mb-5 mr-5 h-[373px]'
-            onClick={() => onPodcastClick(item.id)}
+            onClick={() => onPodcastClick(id)}
           />
         ))}
       </Carousel>

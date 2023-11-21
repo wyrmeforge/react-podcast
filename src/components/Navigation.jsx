@@ -53,7 +53,7 @@ const NavContent = ({ navLinks, expanded }) => {
 const Navigation = ({ expanded = false, className }) => {
   const navLinks = [
     { to: '/', element: <LogoIcon />, className: 'mr-[123px]', isVisible: expanded },
-    { to: routePaths.PODCAST_DETAILS, element: 'Episodes' },
+    { to: routePaths.EPISODES, element: 'Episodes' },
     { to: routePaths.ABOUT_PAGE, element: 'About' },
     { to: routePaths.PRICING, element: 'Pricing' },
     { to: routePaths.TESTIMONIALS, element: 'Testimonials' },

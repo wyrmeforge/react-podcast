@@ -7,9 +7,13 @@ import { RouterProvider } from 'react-router-dom';
 import router from './router/root.jsx';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { ApolloProvider } from '@apollo/client';
+import { apolloClient } from './graphql.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>,
+  <ApolloProvider client={apolloClient}>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </ApolloProvider>,
 );

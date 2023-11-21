@@ -1,6 +1,5 @@
 import React from 'react';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
-import im from '../../../assets/images/perplexed_mind.png';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Button from '../../../components/Button.jsx';
 import Tags from '../../../components/Tags.jsx';
@@ -9,7 +8,7 @@ import Divider from '../../../components/Divider.jsx';
 const BlogItem = ({ category, title, description, tags, date }) => {
   return (
     <div className='w-[570px] rounded-8 border-2 bg-white border-black p-4 text-left group hover:cursor-pointer hover:drop-shadow-dark transition-all'>
-      <img className='mb-10 h-[320px] w-full object-cover rounded-8' src={im} />
+      <img className='mb-10 h-[320px] w-full object-cover rounded-8' />
       <div className='text-14 font-bold text-grey leading-160 mb-[6px] uppercase '>{category}</div>
       <div className='text-37 leading-140 font-bold mb-5 group-hover:text-vermillion'>{title}</div>
       <div className='text-grey font-medium leading-160'>{description}</div>

@@ -1,8 +1,8 @@
 import React from 'react';
-import MaxWidthContainer from './Structure/MaxWidthContainer.jsx';
-import Navigation from './Navigation.jsx';
-import Divider from './Divider.jsx';
-import { GooglePodcastColorM, LogoIcon, SpotifyColorM, YoutubeColorM } from './Icons/index.js';
+import MaxWidthContainer from './MaxWidthContainer.jsx';
+import Navigation from '../Navigation.jsx';
+import Divider from '../Divider.jsx';
+import { GooglePodcastColorM, LogoIcon, SpotifyColorM, YoutubeColorM } from '../Icons/index.js';
 
 const Footer = () => {
   return (

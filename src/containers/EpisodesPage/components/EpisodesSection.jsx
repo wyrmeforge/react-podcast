@@ -5,10 +5,11 @@ import Tabs from '../../../components/Tabs.jsx';
 import EpisodeCard from '../../../components/EpisodeCard.jsx';
 import { useSelector } from 'react-redux';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
+import { tcl } from '../../../utils/styles.js';
 
 const tags = ['All', 'Business', 'Comedy', 'Education', 'Health', 'News', 'Tech'];
 
-const EpisodesSection = () => {
+const EpisodesSection = ({ podcastId, setCurrentEpisodeId }) => {
   const [activeTab, setActiveTab] = useState(tags[0]);
   const episodes = useSelector(selectAllPodcasts);
 
@@ -18,12 +19,16 @@ const EpisodesSection = () => {
     );
   }, [episodes, activeTab]);
 
+  const onCardClick = (id) => {
+    setCurrentEpisodeId(id);
+  };
+
   const tabs = tags.map((tag) => ({
     label: tag,
     content: filteredEpisodes?.length ? (
       <div className='grid grid-cols-2 gap-5'>
-        {filteredEpisodes.map((item, idx) => (
-          <EpisodeCard key={idx} {...item} />
+        {filteredEpisodes.map(({ attributes, id }) => (
+          <EpisodeCard onClick={() => onCardClick(id)} key={id} {...attributes} />
         ))}
       </div>
     ) : (
@@ -32,7 +37,11 @@ const EpisodesSection = () => {
   }));
 
   return (
-    <SectionContainer titleClassName='mb-25' title='Latest Episode'>
+    <SectionContainer
+      className={tcl({ 'pt-10 bg-champagne': !podcastId })}
+      titleClassName='mb-25'
+      title='Latest Episode'
+    >
       <MaxWidthContainer>
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       </MaxWidthContainer>

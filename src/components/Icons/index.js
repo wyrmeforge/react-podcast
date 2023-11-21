@@ -7,7 +7,7 @@ export { default as StarIcon } from './Star.jsx';
 export { default as QuoteIcon } from './Quote.jsx';
 export { default as ArrowIcon } from './Arrow.jsx';
 export { default as ArrowDownIcon } from './ArrowDown.jsx';
-export { default as ScribbleBlue } from './ScribbleBlue.jsx';
+export { default as ScribbleBlue } from './Scribble/ScribbleBlue.jsx';
 export { default as ShiningStars } from './ShiningStars.jsx';
 export { default as WormFace } from './WormFace.jsx';
 export { default as Star_2 } from './Star_2.jsx';

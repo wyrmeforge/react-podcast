@@ -8,9 +8,9 @@ const Quote = ({
   textClassName,
   showDecorations = false,
   text,
+  avatarSrc,
   username,
   jobIcon,
-  jobTitle,
 }) => {
   const containerClasses = tcl(
     'bg-champagne rounded-12 py-10 flex flex-col items-center relative',
@@ -27,7 +27,7 @@ const Quote = ({
       {showDecorations && <StarIcon className='absolute top-[-54px] right-[-48px]' />}
       <QuoteIcon />
       <div className={textClasses}>{text}</div>
-      <UserCard username={username} jobIcon={jobIcon} jobTitle={jobTitle} />
+      <UserCard avatarSrc={avatarSrc} username={username} jobIcon={jobIcon} />
       {showDecorations && <DNAIcon className='absolute left-[-60px] bottom-[40px]' />}
     </div>
   );
