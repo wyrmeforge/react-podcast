@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from './Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const ArrowDown = () => (
   <Icon width='16' height='16'>

@@ -1,9 +1,9 @@
 import React from 'react';
-import Avatar from './Avatar';
+import UserAvatar from './UserAvatar.jsx';
 
 const UserCard = ({ avatarSrc, username, jobIcon }) => (
   <div className='flex items-center text-14'>
-    <Avatar imageUrl={avatarSrc} />
+    <UserAvatar imageUrl={avatarSrc} />
     <span className='font-medium mx-2'>{username},</span>
     {jobIcon && jobIcon}
   </div>

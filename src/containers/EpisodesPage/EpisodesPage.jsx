@@ -13,7 +13,7 @@ const EpisodesPage = () => {
 
   return (
     <>
-      {podcastId && <HeroSection podcastId={currentEpisodeId} />}
+      {currentEpisodeId && <HeroSection podcastId={currentEpisodeId} />}
       <EpisodesSection setCurrentEpisodeId={setCurrentEpisodeId} podcastId={currentEpisodeId} />
     </>
   );

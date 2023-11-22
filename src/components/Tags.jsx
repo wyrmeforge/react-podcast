@@ -4,7 +4,7 @@ const Tags = ({ tags }) => (
   <div className='flex'>
     {tags?.map((tag, idx) => (
       <div
-        className='px-3 py-[5px] rounded-4 border-grey border mr-[6px] text-12 font-medium text-grey leading-160'
+        className='px-3 py-[5px] rounded-4 border-grey border mr-[6px] text-12 text-grey'
         key={idx}
       >
         {tag}

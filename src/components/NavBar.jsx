@@ -50,7 +50,7 @@ const NavContent = ({ navLinks, expanded }) => {
   );
 };
 
-const Navigation = ({ expanded = false, className }) => {
+const NavBar = ({ expanded = false, className }) => {
   const navLinks = [
     { to: '/', element: <LogoIcon />, className: 'mr-[123px]', isVisible: expanded },
     { to: routePaths.EPISODES, element: 'Episodes' },
@@ -68,4 +68,4 @@ const Navigation = ({ expanded = false, className }) => {
   );
 };
 
-export default Navigation;
+export default NavBar;

@@ -1,0 +1,67 @@
+{
+  "reviews": {
+    "data": [
+      {
+        "id": "1",
+        "attributes": {
+          "text": "Discover, listen, and be inspired—your portable world of podcasts.",
+          "userName": "Emily Blunt",
+          "platform": "spotify",
+          "userAvatar": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/Emily_Blunt_8d040c743b.png",
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "__typename": "Review"
+        },
+        "__typename": "ReviewEntity"
+      },
+      {
+        "id": "2",
+        "attributes": {
+          "text": "Turn moments into stories with our podcast app—your anytime, anywhere companion.",
+          "userName": "Luna lovegood",
+          "platform": "googlePodcast",
+          "userAvatar": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/Luna_Lovegood_2275451b22.png",
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "__typename": "Review"
+        },
+        "__typename": "ReviewEntity"
+      },
+      {
+        "id": "3",
+        "attributes": {
+          "text": "Podcasts in your pocket: where curiosity meets convenience.",
+          "userName": "Mia Winters",
+          "platform": "youtube",
+          "userAvatar": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/Mia_Winters_13512cae68.png",
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "__typename": "Review"
+        },
+        "__typename": "ReviewEntity"
+      }
+    ],
+    "__typename": "ReviewEntityResponseCollection"
+  }
+}

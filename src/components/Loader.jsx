@@ -7,11 +7,13 @@ const Loader = ({ className }) => {
     className,
   );
 
+  const defaultClasses = 'h-8 w-8 bg-vermillion rounded-full animate-bounce';
+
   return (
     <div className={containerClasses}>
-      <div className='h-8 w-8 bg-vermillion rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-      <div className='h-8 w-8 bg-vermillion rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-      <div className='h-8 w-8 bg-vermillion rounded-full animate-bounce'></div>
+      <div className={`${defaultClasses} [animation-delay:-0.3s]`}></div>
+      <div className={`${defaultClasses} [animation-delay:-0.15s]`}></div>
+      <div className={defaultClasses}></div>
     </div>
   );
 };

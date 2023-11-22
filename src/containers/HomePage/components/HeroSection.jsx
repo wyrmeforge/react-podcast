@@ -1,5 +1,4 @@
 import React from 'react';
-import HeroContainer from '../../../components/Structure/HeroContainer.jsx';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Button from '../../../components/Button.jsx';
 import Carousel from '../../../components/Carousel/Carousel.jsx';
@@ -13,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as routePaths from '../../../consts/router/routerPaths.js';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
+import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const HeroSection = () => {
   };
 
   return (
-    <HeroContainer customClassName='pt-16 pb-35'>
+    <SectionContainer className='pt-16 pb-35 bg-champagne'>
       <MaxWidthContainer customClassName='flex flex-col items-center text-center'>
         <h1 className='mb-10 max-w-lg'>
           Your Daily <span className='text-vermillion'>Podcast</span>
@@ -40,11 +40,11 @@ const HeroSection = () => {
         </Button>
       </MaxWidthContainer>
       <Carousel className='py-30' centerMode infinite autoplay centerPadding='-15'>
-        {podcasts?.map(({ attributes, id }) => (
+        {podcasts?.map(({ attributes: { title, image, platforms }, id }) => (
           <PodcastCover
-            title={attributes?.title}
-            image={attributes?.image?.data?.attributes?.url}
-            availablePlatforms={attributes?.platforms}
+            title={title}
+            image={image?.data?.attributes?.url}
+            availablePlatforms={platforms}
             key={id}
             className='w-[373px] mb-5 mr-5 h-[373px]'
             onClick={() => onPodcastClick(id)}
@@ -59,7 +59,7 @@ const HeroSection = () => {
           <YoutubeColorXL />
         </div>
       </MaxWidthContainer>
-    </HeroContainer>
+    </SectionContainer>
   );
 };
 

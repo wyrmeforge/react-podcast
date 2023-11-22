@@ -47,13 +47,13 @@ const TestimonialsSection = ({ id }) => {
       className='bg-alice pb-[208px]'
     >
       <Carousel arrows arrowClassName='-bottom-25' className='pl-35 flex'>
-        {reviews?.map(({ id, attributes }) => (
+        {reviews?.map(({ id, attributes: { text, userName, platform, userAvatar } }) => (
           <Quote
             key={id}
-            text={attributes?.text}
-            username={attributes?.userName}
-            jobIcon={jobIcons[attributes?.platform]}
-            avatarSrc={attributes?.userAvatar?.data?.attributes?.url}
+            text={text}
+            username={userName}
+            jobIcon={jobIcons[platform]}
+            avatarSrc={userAvatar?.data?.attributes?.url}
             textClassName='pt-9 px-0 pb-8 max-w-none text-23 leading-160 font-medium text-left'
             className='bg-white w-[570px] rounded-8 items-start px-10 h-[360px] mr-5 justify-between'
           />

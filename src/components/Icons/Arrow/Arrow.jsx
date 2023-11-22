@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from './Icon.jsx';
+import Icon from '../Icon.jsx';
 
 const Arrow = ({ className }) => (
   <Icon width='40' height='40' className={className}>

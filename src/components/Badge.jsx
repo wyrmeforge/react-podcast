@@ -6,6 +6,7 @@ const Badge = ({ text, className }) => {
     '!text-vermillion text-center text-12 uppercase py-[3px] px-[6px] border rounded-4 border-vermillion leading-160 font-bold',
     className,
   );
+
   return <div className={badgeClasses}>{text}</div>;
 };
 

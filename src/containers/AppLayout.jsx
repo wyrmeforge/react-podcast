@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Structure/Header.jsx';
+import Header from '../layout/Header.jsx';
 import { Outlet } from 'react-router-dom';
-import Footer from '../components/Structure/Footer.jsx';
+import Footer from '../layout/Footer.jsx';
 import ErrorBoundary from './ErrorBoundary.jsx';
 import CTASection from './CTASection.jsx';
 import { useScrollToTop } from '../hooks/useScrollToTop.js';

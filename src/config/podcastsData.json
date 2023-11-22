@@ -1,0 +1,231 @@
+{
+  "podcasts": {
+    "data": [
+      {
+        "id": "1",
+        "attributes": {
+          "title": "Are you a Perplexed Mind Person?",
+          "publishedAt": "2023-11-14T23:08:52.796Z",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+          "tags": [
+            "comedy",
+            "health"
+          ],
+          "episodeTime": "46min",
+          "episode": 4,
+          "platforms": [
+            "spotify",
+            "youtube"
+          ],
+          "url": "https://www.youtube.com/watch?v=G510jeWiaV0&ab_channel=UkrTrashDub2.0",
+          "isFeatured": true,
+          "image": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/perplexed_mind_7ff66e2b88.png",
+                "alternativeText": null,
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "hosts": [
+            {
+              "image": {
+                "data": {
+                  "attributes": {
+                    "url": "/uploads/Jane_Doe_533776062f.png",
+                    "alternativeText": null,
+                    "__typename": "UploadFile"
+                  },
+                  "__typename": "UploadFileEntity"
+                },
+                "__typename": "UploadFileEntityResponse"
+              },
+              "name": "Jane ",
+              "__typename": "ComponentComponentsHost"
+            },
+            {
+              "image": {
+                "data": {
+                  "attributes": {
+                    "url": "/uploads/Jane_Doe_533776062f.png",
+                    "alternativeText": null,
+                    "__typename": "UploadFile"
+                  },
+                  "__typename": "UploadFileEntity"
+                },
+                "__typename": "UploadFileEntityResponse"
+              },
+              "name": "Estriper",
+              "__typename": "ComponentComponentsHost"
+            }
+          ],
+          "__typename": "Podcast"
+        },
+        "__typename": "PodcastEntity"
+      },
+      {
+        "id": "2",
+        "attributes": {
+          "title": "Pandemic Becoming Endemic",
+          "publishedAt": "2023-11-20T23:08:33.434Z",
+          "description": "A Nature survey shows many scientists expect the virus that causes COVID-19 to become...",
+          "tags": [
+            "comedy",
+            "health"
+          ],
+          "episodeTime": "46min",
+          "episode": 6,
+          "platforms": null,
+          "url": "https://www.youtube.com/watch?v=G510jeWiaV0&ab_channel=UkrTrashDub2.0",
+          "isFeatured": null,
+          "image": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/covid_19_endemic_ae995d5434.png",
+                "alternativeText": null,
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "hosts": [],
+          "__typename": "Podcast"
+        },
+        "__typename": "PodcastEntity"
+      },
+      {
+        "id": "3",
+        "attributes": {
+          "title": "Tesla Autopilot Controversy",
+          "publishedAt": "2023-11-21T07:25:54.079Z",
+          "description": "Tesla's vehicles boast 'Full-Self-Driving' (FSD), but current regulations do not allow for fully...",
+          "tags": [
+            "tech"
+          ],
+          "episodeTime": "35",
+          "episode": 5,
+          "platforms": null,
+          "url": "https://www.youtube.com/watch?v=G510jeWiaV0&ab_channel=UkrTrashDub2.0",
+          "isFeatured": false,
+          "image": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/tesla_autopilot_4d50956d0c.png",
+                "alternativeText": null,
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "hosts": [],
+          "__typename": "Podcast"
+        },
+        "__typename": "PodcastEntity"
+      },
+      {
+        "id": "4",
+        "attributes": {
+          "title": "Women's Rights? Is it alright?",
+          "publishedAt": "2023-11-21T07:26:17.056Z",
+          "description": "A look back at history shows that women have made great strides in the fight for equality...",
+          "tags": [
+            "news"
+          ],
+          "episodeTime": "55",
+          "episode": 1,
+          "platforms": [
+            "spotify",
+            "googlePodcast",
+            "youtube"
+          ],
+          "url": "https://www.youtube.com/watch?v=G510jeWiaV0&ab_channel=UkrTrashDub2.0",
+          "isFeatured": false,
+          "image": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/womens_rights_6ec2ae761c.png",
+                "alternativeText": null,
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "hosts": [],
+          "__typename": "Podcast"
+        },
+        "__typename": "PodcastEntity"
+      },
+      {
+        "id": "5",
+        "attributes": {
+          "title": "How to Deal with Self–Confidence",
+          "publishedAt": "2023-11-21T07:26:45.366Z",
+          "description": "We have a therapist expert as our guest, Krista Gordon is will share her experience...",
+          "tags": [
+            "health"
+          ],
+          "episodeTime": "33",
+          "episode": 4,
+          "platforms": [
+            "youtube"
+          ],
+          "url": "https://www.youtube.com/watch?v=G510jeWiaV0&ab_channel=UkrTrashDub2.0",
+          "isFeatured": false,
+          "image": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/self_confidence_972bc7f7de.png",
+                "alternativeText": null,
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "hosts": [],
+          "__typename": "Podcast"
+        },
+        "__typename": "PodcastEntity"
+      },
+      {
+        "id": "6",
+        "attributes": {
+          "title": "Type of Social Classes of People",
+          "publishedAt": "2023-11-21T07:27:54.938Z",
+          "description": "Social class refers to a group of people with similar levels of wealth, influence, and...",
+          "tags": [
+            "health"
+          ],
+          "episodeTime": "33",
+          "episode": null,
+          "platforms": [
+            "googlePodcast"
+          ],
+          "url": "https://www.youtube.com/watch?v=G510jeWiaV0&ab_channel=UkrTrashDub2.0",
+          "isFeatured": false,
+          "image": {
+            "data": {
+              "attributes": {
+                "url": "/uploads/social_class_704649521f.png",
+                "alternativeText": null,
+                "__typename": "UploadFile"
+              },
+              "__typename": "UploadFileEntity"
+            },
+            "__typename": "UploadFileEntityResponse"
+          },
+          "hosts": [],
+          "__typename": "Podcast"
+        },
+        "__typename": "PodcastEntity"
+      }
+    ],
+    "__typename": "PodcastEntityResponseCollection"
+  }
+}

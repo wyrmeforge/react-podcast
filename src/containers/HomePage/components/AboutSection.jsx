@@ -22,12 +22,13 @@ const InfoItem = ({ image, text }) => (
 );
 
 const AboutSection = () => {
-  const [reviewAttributes, setReviewAttributes] = useState(null);
+  const [reviewData, setReviewData] = useState(null);
 
   const fetchReview = async () => {
     try {
       const { data } = await reviewsService.getOneReview(REVIEW_ID);
-      setReviewAttributes(data?.attributes);
+
+      setReviewData(data?.attributes);
     } catch (error) {
       console.error('Error fetching review:', error);
     }
@@ -42,6 +43,8 @@ const AboutSection = () => {
     spotify: <SpotifyColorM />,
     youtube: <YoutubeColorM />,
   };
+
+  const { text, userAvatar, userName, platform } = reviewData || {};
 
   return (
     <SectionContainer
@@ -60,11 +63,10 @@ const AboutSection = () => {
           />
         </div>
         <Quote
-          showDecorations
-          text={reviewAttributes?.text}
-          avatarSrc={reviewAttributes?.userAvatar?.data?.attributes?.url}
-          username={reviewAttributes?.userName}
-          jobIcon={jobIcons[reviewAttributes?.platform]}
+          text={text}
+          avatarSrc={userAvatar?.data?.attributes?.url}
+          username={userName}
+          jobIcon={jobIcons[platform]}
         />
       </MaxWidthContainer>
     </SectionContainer>

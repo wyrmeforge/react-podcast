@@ -17,19 +17,19 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
   return (
     <>
       <div className='flex justify-between'>
-        {tabs.map((tab, index) => (
+        {tabs.map(({ label }, index) => (
           <Tab
             key={index}
-            label={tab.label}
-            active={tab.label === activeTab}
-            onClick={() => setActiveTab(tab.label)}
+            label={label}
+            active={label === activeTab}
+            onClick={() => setActiveTab(label)}
           />
         ))}
       </div>
       <Divider className='mb-25' />
-      {tabs.map((tab, index) => (
-        <div key={index} className={`${activeTab === tab.label ? 'block' : 'hidden'}`}>
-          {tab.content}
+      {tabs.map(({ label, content }, index) => (
+        <div key={index} className={`${activeTab === label ? 'block' : 'hidden'}`}>
+          {content}
         </div>
       ))}
     </>

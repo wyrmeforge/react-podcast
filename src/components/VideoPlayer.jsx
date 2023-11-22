@@ -3,17 +3,17 @@ import ReactPlayer from 'react-player';
 import { tcl } from '../utils/styles.js';
 import Loader from './Loader.jsx';
 
-const Player = ({ className, isVisible, setIsPlayerVisible, url }) => {
+const VideoPlayer = ({ className, isVisible, setIsPlayerVisible, url }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   if (!isVisible) return null;
 
   return (
-    <div className={tcl('w-full h-full flex justify-center items-center', className)}>
+    <div className={tcl('flex justify-center items-center', className)}>
       <ReactPlayer
         playing={isLoaded}
-        onReady={() => setIsLoaded(true)}
-        onError={() => setIsPlayerVisible(false)}
+        onReady={() => setIsLoaded(!isLoaded)}
+        onError={() => setIsPlayerVisible(!isVisible)}
         width={isLoaded ? '100%' : '0px'}
         height={isLoaded ? '100%' : '0px'}
         url={url}
@@ -23,4 +23,4 @@ const Player = ({ className, isVisible, setIsPlayerVisible, url }) => {
   );
 };
 
-export default Player;
+export default VideoPlayer;

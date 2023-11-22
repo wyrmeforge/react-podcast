@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroContainer from '../../../components/Structure/HeroContainer.jsx';
 import Button from '../../../components/Button.jsx';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
+import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 
 const InfoBlock = ({ count, text }) => {
   return (
@@ -17,7 +17,7 @@ const InfoBlock = ({ count, text }) => {
 
 const HeroSection = () => {
   return (
-    <HeroContainer customClassName='pt-16 pb-[116px]'>
+    <SectionContainer className='pt-16 pb-[116px] bg-champagne'>
       <MaxWidthContainer customClassName='flex flex-col items-center text-center relative overflow-visible'>
         <h1 className='mb-10'>
           About <br /> <span className='text-vermillion'>Pod of Cast</span>
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <InfoBlock count={39} text='Daily Listeners' />
         </div>
       </MaxWidthContainer>
-    </HeroContainer>
+    </SectionContainer>
   );
 };
 

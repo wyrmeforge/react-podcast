@@ -2,45 +2,32 @@ import React from 'react';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Button from '../../../components/Button.jsx';
-import {
-  ShiningStars,
-  ScribbleBlue,
-  SmileFace,
-  WormFace,
-  Star_2,
-  Fire,
-} from '../../../components/Icons/index.js';
+
 import * as routePaths from '../../../consts/router/routerPaths.js';
 import { useNavigate } from 'react-router-dom';
 
 const features = [
   {
-    icon: <ScribbleBlue />,
     title: 'Topic by Request',
     subtitle: 'Lorem ipsum dolor sit amet consectet pis\n' + 'cing elit, sed do eiusmod tempor.',
   },
   {
-    icon: <ShiningStars />,
     title: 'Exclusive Content',
     subtitle: 'Lorem ipsum dolor sit amet consectet pis\n' + 'cing elit, sed do eiusmod tempor.',
   },
   {
-    icon: <SmileFace />,
     title: 'Join the Community',
     subtitle: 'Lorem ipsum dolor sit amet consectet pis\n' + 'cing elit, sed do eiusmod tempor.',
   },
   {
-    icon: <WormFace />,
     title: 'Livestreaming Access',
     subtitle: 'Lorem ipsum dolor sit amet consectet pis\n' + 'cing elit, sed do eiusmod tempor.',
   },
   {
-    icon: <Fire />,
     title: 'Exclusive Episodes & Merch',
     subtitle: 'Lorem ipsum dolor sit amet consectet pis\n' + 'cing elit, sed do eiusmod tempor.',
   },
   {
-    icon: <Star_2 />,
     title: 'And much more!',
     subtitle: 'Lorem ipsum dolor sit amet consectet pis\n' + 'cing elit, sed do eiusmod tempor.',
   },

@@ -1,8 +1,13 @@
 import React from 'react';
-import MaxWidthContainer from './MaxWidthContainer.jsx';
-import Navigation from '../Navigation.jsx';
-import Divider from '../Divider.jsx';
-import { GooglePodcastColorM, LogoIcon, SpotifyColorM, YoutubeColorM } from '../Icons/index.js';
+import MaxWidthContainer from '../components/Structure/MaxWidthContainer.jsx';
+import NavBar from '../components/NavBar.jsx';
+import Divider from '../components/Divider.jsx';
+import {
+  GooglePodcastColorM,
+  LogoIcon,
+  SpotifyColorM,
+  YoutubeColorM,
+} from '../components/Icons/index.js';
 
 const Footer = () => {
   return (
@@ -18,7 +23,7 @@ const Footer = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </div>
           </div>
-          <Navigation className='grid w-full h-full mr-[124px] grid-cols-2 grid-rows-3 gap-5 max-w-[270px] text-black' />
+          <NavBar className='grid w-full h-full mr-[124px] grid-cols-2 grid-rows-3 gap-5 max-w-[270px] text-black' />
           <div className='w-full'>
             <div className='mb-7 text-16'>Listen episodes on your fav platform:</div>
             <div className='flex max-w-[373px] justify-between w-full'>
