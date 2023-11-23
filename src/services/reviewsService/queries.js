@@ -21,25 +21,3 @@ export const GET_ALL_REVIEWS = gql(`
     }
   }
 `);
-
-export const GET_ONE_REVIEW = gql(`
-  query getOneReview($id: ID) {
-    review(id: $id) {
-      data {
-        id
-        attributes {
-          text
-          userName
-          platform
-          userAvatar {
-            data {
-              attributes {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`);

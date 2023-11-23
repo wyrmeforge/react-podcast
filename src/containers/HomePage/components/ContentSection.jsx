@@ -5,20 +5,13 @@ import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.j
 import Button from '../../../components/Button.jsx';
 import { useSelector } from 'react-redux';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
-import { useNavigate } from 'react-router-dom';
-import * as routePaths from '../../../consts/router/routerPaths.js';
+import routerService from '../../../services/routerService.js';
 
 const ContentSection = ({ id }) => {
-  const episodes = useSelector(selectAllPodcasts);
-  const navigate = useNavigate();
+  const podcasts = useSelector(selectAllPodcasts);
 
-  const onCardClick = (episodeId) => {
-    navigate(`${routePaths.EPISODES}/${episodeId}`);
-  };
-
-  const onBrowseClick = () => {
-    navigate(routePaths.EPISODES);
-  };
+  const onCardClick = (episodeId) => routerService.toEpisodeDetails(episodeId);
+  const onBrowseClick = () => routerService.toEpisodesPage();
 
   return (
     <SectionContainer
@@ -29,7 +22,7 @@ const ContentSection = ({ id }) => {
     >
       <MaxWidthContainer>
         <div className='grid grid-cols-2 gap-5 mb-25'>
-          {episodes?.map(({ attributes, id }) => (
+          {podcasts?.map(({ attributes, id }) => (
             <EpisodeCard onClick={() => onCardClick(id)} key={id} {...attributes} />
           ))}
         </div>

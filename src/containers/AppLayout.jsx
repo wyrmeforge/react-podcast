@@ -9,17 +9,23 @@ import podcastService from '../services/podcastsService/podcastService.js';
 import { useDispatch } from 'react-redux';
 import { setPodcasts } from '../store/podcast/podcastsSlice.js';
 import Loader from '../components/Loader.jsx';
+import reviewsService from '../services/reviewsService/reviewsService.js';
+import { setReviews } from '../store/reviews/reviewsSlice.js';
+import tagsService from '../services/tagsService/tagsService.js';
+import { setTags } from '../store/tags/tagsSlice.js';
 
 const AppLayout = () => {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
   const dispatch = useDispatch();
 
   const initApp = async () => {
-    const { data } = await podcastService.getAllPodcasts();
+    const podcasts = await podcastService.getAllPodcasts();
+    const reviews = await reviewsService.getAllReviews();
+    const tags = await tagsService.getTags();
 
-    if (data) {
-      dispatch(setPodcasts(data));
-    }
+    dispatch(setPodcasts(podcasts?.data));
+    dispatch(setReviews(reviews?.data));
+    dispatch(setTags(tags?.data));
 
     setIsAppLoaded(!isAppLoaded);
   };

@@ -4,67 +4,80 @@ import Image from '../../../components/Image.jsx';
 import bg from '../../../assets/images/about_section_micro_bg.jpg';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Divider from '../../../components/Divider.jsx';
-import host1Image from '../../../assets/images/host_1.jpg';
-import host2Image from '../../../assets/images/host_2.jpg';
+import porterSeverusImage from '../../../assets/images/host_1.jpg';
+import marquesKeithImage from '../../../assets/images/host_2.jpg';
+import { InstagramIcon, TikTokIcon, TwitterIcon } from '../../../components/Icons/index.js';
 
-const HostInfoBlock = ({ imageSrc, name, description, number }) => (
+const HostInfo = ({ image, name, text, number }) => (
   <div className='w-[570px] h-[520px] bg-white rounded-8 border-2 p-4 flex justify-between drop-shadow-dark'>
-    <Image className='rounded-8' src={imageSrc} alt={name} />
+    <Image className='rounded-8' src={image} alt={name} />
     <div className='flex flex-col justify-end font-medium text-14 leading-160 text-left ml-5'>
-      <div className='mb-[6px] text-black'>{`Host ${number}`}</div>
+      <div className='mb-[6px] text-black'>Host {number}</div>
       <div className='font-bold text-37 leading-none tracking-tighter mb-5'>{name}</div>
-      <p className='text-grey'>{description}</p>
+      <p className='text-grey'>{text}</p>
       <Divider className='mt-5 mb-[10px]' />
-      <div>Follow me:</div>
+      <div className='flex justify-end'>
+        <div className='text-12 text-grey font-bold mr-5'>follow me:</div>
+        <div className='max-w-[80px] w-full flex justify-between'>
+          <TikTokIcon />
+          <InstagramIcon />
+          <TwitterIcon />
+        </div>
+      </div>
     </div>
   </div>
 );
 
-const AboutSection = () => (
-  <SectionContainer
-    title='What Our Listeners Say'
-    subtitle='Their Experience Throughout Every Platform'
-    subtitleClassName='mb-8'
-  >
-    <MaxWidthContainer>
-      <Image className='mb-15' src={bg} />
-      <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-20'>
-        About and History
-      </h3>
-      <div className='flex justify-between text-left text-grey text-16 font-medium leading-160 mb-20'>
-        <p className='mr-5 w-[570px]'>
-          Eu non <b>diam</b> phasellus vestibulum lorem. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim. Id diam vel quam <b>elementum pulvinar.</b> <br /> <br />
-          Elementum eu facilisis sed odio morbi quis commodo. Sed odio morbi quis commodo odio
-          aenean sed adipiscing odio diam. uno fablotoson louw uit.
-        </p>
-        <p className='w-[570px]'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam pellentesque at bibendum
-          euismod tellus duis cursus dignissim odio. Sit vulputate et integer in. Sit vel, senectus
-          iaculis morbi. Amet interdum imperdiet laoreet morbi tincidunt fermentum, libero. Ante
-          enim eget. <br /> <br /> Viverra at porttitor accumsan. Orci non here
-        </p>
-      </div>
-      <Divider className='mb-25' />
-      <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-20'>
-        Founder and Main Host
-      </h3>
-      <div className='flex justify-between'>
-        <HostInfoBlock
-          imageSrc={host1Image}
-          name='Porter Severus'
-          description='Lorem ipsum dolor sit amet con sectet piscing elit, sed do eiusmod tempor rarylet podofcast.'
-          number={1}
-        />
-        <HostInfoBlock
-          imageSrc={host2Image}
-          name='Marques Keith'
-          description='Lorem ipsum dolor sit amet con sectet piscing elit, sed do eiusmod tempor rarylet podofcast.'
-          number={2}
-        />
-      </div>
-    </MaxWidthContainer>
-  </SectionContainer>
-);
+const AboutSection = () => {
+  const hostsInfo = [
+    {
+      name: 'Porter Severus',
+      text: 'Meet Porter Severus, the visionary founder of Pod of Cast. With a passion for storytelling, Porter leads engaging and thought-provoking conversations that take you on a journey of discovery.',
+      image: porterSeverusImage,
+    },
+    {
+      name: 'Marques Keith',
+      text: 'Introducing Marques Keith, the charismatic co-host of Pod of Cast. Marques brings infectious energy and diverse perspectives to every episode, making each discussion a dynamic and enlightening experience.',
+      image: marquesKeithImage,
+    },
+  ];
+  return (
+    <SectionContainer
+      title='What Our Listeners Say'
+      subtitle='Their Experience Throughout Every Platform'
+      subtitleClassName='mb-8'
+    >
+      <MaxWidthContainer>
+        <Image className='mb-15' src={bg} alt='microphone background' />
+        <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-20'>
+          About and History
+        </h3>
+        <div className='text-left text-grey mb-20 columns-2 gap-5'>
+          <p>
+            Embark on a thrilling adventure with Pod of Cast, where every episode unfolds a unique
+            story. Our mission is to captivate your imagination, fostering a vibrant community of
+            avid listeners. Join us as we explore fascinating topics and share in the joy of
+            discovery.
+          </p>
+          <p>
+            At the heart of Pod of Cast is a commitment to providing an enriching experience.
+            Immerse yourself in thought-provoking discussions, intriguing stories, and expert
+            insights. Discover a world of possibilities and be part of a community that values
+            curiosity, diversity, and the shared love of great conversations.
+          </p>
+        </div>
+        <Divider className='mb-25' />
+        <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-20'>
+          Founder and Main Host
+        </h3>
+        <div className='flex justify-between'>
+          {hostsInfo?.map((item, idx) => (
+            <HostInfo key={idx} number={idx + 1} {...item} />
+          ))}
+        </div>
+      </MaxWidthContainer>
+    </SectionContainer>
+  );
+};
 
 export default AboutSection;

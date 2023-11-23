@@ -6,9 +6,8 @@ import TestimonialsSection from './components/TestimonialsSection.jsx';
 import FeaturesSection from './components/FeaturesSection.jsx';
 import ContentSection from './components/ContentSection.jsx';
 import PricingSection from './components/PricingSection.jsx';
-// import BlogSection from './components/BlogSection.jsx';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle.js';
-import * as routePaths from '../../consts/router/routerPaths.js';
+import * as routePaths from '../../consts/routerPaths.js';
 import useScrollToSection from '../../hooks/useScrollToSection.js';
 
 const HomePage = () => {
@@ -23,7 +22,6 @@ const HomePage = () => {
       <FeaturesSection id={routePaths.FEATURE} />
       <ContentSection id={routePaths.RECENT_EPISODES} />
       <PricingSection id={routePaths.PRICING} />
-      {/*<BlogSection />*/}
     </>
   );
 };

@@ -2,19 +2,11 @@ import React from 'react';
 import MaxWidthContainer from '../components/Structure/MaxWidthContainer.jsx';
 import Button from '../components/Button.jsx';
 import NavBar from '../components/NavBar.jsx';
-import { useNavigate } from 'react-router-dom';
-import * as routePaths from '../consts/router/routerPaths.js';
+import routerService from '../services/routerService.js';
 
 const Header = () => {
-  const navigate = useNavigate();
-
-  const onRecentEpisodesClick = () => {
-    navigate(routePaths.RECENT_EPISODES, { replace: true });
-  };
-
-  const onSubscribeClick = () => {
-    navigate(routePaths.PRICING, { replace: true });
-  };
+  const onRecentEpisodesClick = () => routerService.toRecentEpisodesSection();
+  const onSubscribeClick = () => routerService.toPricingSection();
 
   return (
     <header className='bg-champagne py-6'>

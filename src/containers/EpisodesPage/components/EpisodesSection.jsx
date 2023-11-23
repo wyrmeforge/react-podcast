@@ -6,29 +6,29 @@ import EpisodeCard from '../../../components/EpisodeCard.jsx';
 import { useSelector } from 'react-redux';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
 import { tcl } from '../../../utils/styles.js';
-
-const tags = ['all', 'business', 'comedy', 'education', 'health', 'news', 'tech'];
+import { selectAllTags } from '../../../store/tags/tagsSelector.js';
 
 const EpisodesSection = ({ podcastId, setCurrentEpisodeId }) => {
-  const [activeTab, setActiveTab] = useState(tags[0]);
-  const episodes = useSelector(selectAllPodcasts);
+  const podcasts = useSelector(selectAllPodcasts);
+  const tags = useSelector(selectAllTags);
+
+  const [activeTab, setActiveTab] = useState(tags[0]?.id);
 
   const filteredEpisodes = useMemo(() => {
-    if (activeTab === tags[0]) return episodes;
+    if (activeTab === tags[0]?.id) return podcasts;
 
-    return episodes.filter(({ attributes }) => attributes.tags.includes(activeTab));
-  }, [episodes, activeTab]);
+    return podcasts.filter(({ attributes: { tags: episodeTags } }) => {
+      return episodeTags?.data?.some((tag) => +tag?.id === +activeTab);
+    });
+  }, [podcasts, activeTab, tags]);
 
-  const onCardClick = (id) => {
-    setCurrentEpisodeId(id);
-  };
-
-  const tabs = tags.map((tag) => ({
-    label: tag,
+  const tabs = tags.map(({ attributes: { name }, id }) => ({
+    id,
+    label: name[0].toUpperCase() + name.slice(1, name.length),
     content: filteredEpisodes?.length ? (
       <div className='grid grid-cols-2 gap-5'>
         {filteredEpisodes.map(({ attributes, id }) => (
-          <EpisodeCard onClick={() => onCardClick(id)} key={id} {...attributes} />
+          <EpisodeCard onClick={() => setCurrentEpisodeId(id)} key={id} {...attributes} />
         ))}
       </div>
     ) : (

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import AppLayout from '../containers/AppLayout.jsx';
 import HomePage from '../containers/HomePage/HomePage.jsx';
-import * as routerPaths from '../consts/router/routerPaths.js';
+import * as routerPaths from '../consts/routerPaths.js';
 import AboutPage from '../containers/AboutPage/AboutPage.jsx';
 import NotFound from '../containers/NotFound.jsx';
 import EpisodesPage from '../containers/EpisodesPage/EpisodesPage.jsx';

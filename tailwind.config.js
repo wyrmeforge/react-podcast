@@ -50,6 +50,7 @@ export default {
         35: '140px',
         40: '160px',
         52: '208px',
+        90: '360px',
         290: '1160px',
       },
       letterSpacing: {

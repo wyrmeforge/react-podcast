@@ -1,41 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Carousel from '../../../components/Carousel/Carousel.jsx';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 import Quote from '../../../components/Quote.jsx';
-import {
-  GooglePodcastColorM,
-  SpotifyColorM,
-  YoutubeColorM,
-} from '../../../components/Icons/index.js';
-import reviewsService from '../../../services/reviewsService/reviewsService.js';
-import Loader from '../../../components/Loader.jsx';
+import { useSelector } from 'react-redux';
+import { selectAllReviews } from '../../../store/reviews/reviewsSelector.js';
+import { platformIcons } from '../../../components/Icons/platformIcons.jsx';
 
 const TestimonialsSection = ({ id }) => {
-  const [reviews, setReviews] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const reviews = useSelector(selectAllReviews);
 
-  const fetchReviews = async () => {
-    try {
-      const { data } = await reviewsService.getAllReviews();
-      setReviews(data);
-    } catch (error) {
-      console.error('Error fetching reviews:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchReviews();
-  }, []);
-
-  const jobIcons = {
-    googlePodcast: <GooglePodcastColorM />,
-    spotify: <SpotifyColorM />,
-    youtube: <YoutubeColorM />,
-  };
-
-  if (loading) return <Loader className='h-10 bg-alice' />;
   if (!reviews) return null;
 
   return (
@@ -52,10 +25,10 @@ const TestimonialsSection = ({ id }) => {
             key={id}
             text={text}
             username={userName}
-            jobIcon={jobIcons[platform]}
+            platformIcon={platformIcons[platform]}
             avatarSrc={userAvatar?.data?.attributes?.url}
-            textClassName='pt-9 px-0 pb-8 max-w-none text-23 leading-160 font-medium text-left'
-            className='bg-white w-[570px] rounded-8 items-start px-10 h-[360px] mr-5 justify-between'
+            textClassName='py-8 px-0 max-w-none text-23 leading-160 font-medium text-left'
+            className='bg-white w-[570px] rounded-8 items-start px-10 h-90 mr-5 justify-between'
           />
         ))}
       </Carousel>

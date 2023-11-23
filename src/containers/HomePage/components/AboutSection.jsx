@@ -1,50 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Image from '../../../components/Image.jsx';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 import Quote from '../../../components/Quote.jsx';
 import questionsImage from '../../../assets/images/illustration_questions.png';
 import ideaImage from '../../../assets/images/illustration_idea.png';
-import {
-  GooglePodcastColorM,
-  SpotifyColorM,
-  YoutubeColorM,
-} from '../../../components/Icons/index.js';
-import reviewsService from '../../../services/reviewsService/reviewsService.js';
+import { useSelector } from 'react-redux';
+import { makeSelectReviewById } from '../../../store/reviews/reviewsSelector.js';
+import { platformIcons } from '../../../components/Icons/platformIcons.jsx';
 
-const REVIEW_ID = 1;
-
-const InfoItem = ({ image, text }) => (
-  <div className='flex flex-col justify-center items-center'>
-    <Image src={image} alt={text} />
-    <div className='max-w-[472px] mt-10'>{text}</div>
-  </div>
-);
+const DEFAULT_REVIEW_ID = 1;
 
 const AboutSection = () => {
-  const [reviewData, setReviewData] = useState(null);
+  const review = useSelector(makeSelectReviewById(DEFAULT_REVIEW_ID));
 
-  const fetchReview = async () => {
-    try {
-      const { data } = await reviewsService.getOneReview(REVIEW_ID);
+  const { text, userAvatar, userName, platform } = review?.attributes || {};
 
-      setReviewData(data?.attributes);
-    } catch (error) {
-      console.error('Error fetching review:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchReview();
-  }, []);
-
-  const jobIcons = {
-    googlePodcast: <GooglePodcastColorM />,
-    spotify: <SpotifyColorM />,
-    youtube: <YoutubeColorM />,
-  };
-
-  const { text, userAvatar, userName, platform } = reviewData || {};
+  const sectionInfo = [
+    {
+      text: 'Elevate Your Mind: Unleashing Inspiration through Engaging Conversations',
+      image: questionsImage,
+    },
+    {
+      text: 'The Power of Dialogue: Finding Inspiration in Every Podcast Moment',
+      image: ideaImage,
+    },
+  ];
 
   return (
     <SectionContainer
@@ -52,22 +33,23 @@ const AboutSection = () => {
       title='Talk. Listen. Get inspired by every minute of it.'
     >
       <MaxWidthContainer>
-        <div className='flex justify-between mb-30'>
-          <InfoItem
-            image={questionsImage}
-            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.'
-          />
-          <InfoItem
-            image={ideaImage}
-            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.'
-          />
+        <div className='flex justify-between'>
+          {sectionInfo?.map(({ text, image }, idx) => (
+            <div key={idx} className='flex flex-col justify-center items-center'>
+              <Image src={image} alt={text} />
+              <div className='max-w-[472px] mt-10'>{text}</div>
+            </div>
+          ))}
         </div>
-        <Quote
-          text={text}
-          avatarSrc={userAvatar?.data?.attributes?.url}
-          username={userName}
-          jobIcon={jobIcons[platform]}
-        />
+        {review ? (
+          <Quote
+            className='mt-30'
+            text={text}
+            avatarSrc={userAvatar?.data?.attributes?.url}
+            username={userName}
+            platformIcon={platformIcons[platform]}
+          />
+        ) : null}
       </MaxWidthContainer>
     </SectionContainer>
   );

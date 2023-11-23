@@ -1,16 +1,17 @@
 import { apolloClient } from '../../graphql.js';
 import { GET_ALL_PODCASTS } from './queries.js';
-import configData from '../../config/podcastsData.json';
+import config from '../../config/config.json';
 
 class PodcastService {
   async getAllPodcasts() {
     try {
       const { data } = await apolloClient.query({ query: GET_ALL_PODCASTS });
 
-      return data.podcasts || configData.podcasts;
+      return data.podcasts;
     } catch (error) {
       console.error('Error fetching podcasts:', error);
-      throw error;
+
+      return config.podcasts;
     }
   }
 }

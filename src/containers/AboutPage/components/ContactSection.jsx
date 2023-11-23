@@ -11,10 +11,7 @@ const ContactSection = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -27,11 +24,18 @@ const ContactSection = () => {
     { name: 'email', type: 'email', label: 'Email', placeholder: 'johndoe@gmail.com' },
     { name: 'phone', type: 'phone', label: 'Phone', placeholder: 'Phone' },
     { name: 'subject', label: 'Subject', placeholder: 'Subject' },
+    {
+      type: 'textarea',
+      name: 'message',
+      label: 'Message',
+      placeholder: 'Your message goes here...',
+      className: 'col-span-2 w-full',
+    },
   ];
 
   return (
     <SectionContainer
-      subtitleClassName='mb-[60px]'
+      subtitleClassName='mb-15'
       title='Get in touch'
       subtitle='Send your message to us'
     >
@@ -41,15 +45,6 @@ const ContactSection = () => {
           {formFields?.map((field) => (
             <CommonInput key={field.name} onChange={handleChange} required {...field} />
           ))}
-          <CommonInput
-            name='message'
-            className='col-span-2 w-full'
-            onChange={handleChange}
-            required
-            label='Message'
-            placeholder='Your message goes here...'
-            type='textarea'
-          />
           <div className='flex justify-between items-center w-full col-span-2'>
             <div className='text-14 font-medium max-w-[150px] w-full text-left'>
               <span className='text-vermillion'>*</span>
@@ -58,7 +53,7 @@ const ContactSection = () => {
             <Button type='submit' xl>
               Send message
             </Button>
-            <div className='text-14 font-medium max-w-[150px] text-left'>
+            <div className='text-14 max-w-[150px] text-left'>
               Viverra at port accumsan. Orci non
             </div>
           </div>

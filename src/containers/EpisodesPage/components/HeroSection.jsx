@@ -77,7 +77,7 @@ const HeroSection = ({ podcastId }) => {
             {isPlayerVisible ? (
               <VideoPlayer
                 url={url}
-                className='h-full w-full'
+                className='h-full w-full hover:cursor-pointer'
                 setIsPlayerVisible={setIsPlayerVisible}
                 isVisible={isPlayerVisible}
               />

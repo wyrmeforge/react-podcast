@@ -9,22 +9,15 @@ import {
   YoutubeColorXL,
 } from '../../../components/Icons/index.js';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import * as routePaths from '../../../consts/router/routerPaths.js';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
+import routerService from '../../../services/routerService.js';
 
 const HeroSection = () => {
-  const navigate = useNavigate();
   const podcasts = useSelector(selectAllPodcasts);
 
-  const onPodcastClick = (podcastId) => {
-    navigate(`${routePaths.EPISODES}/${podcastId}`);
-  };
-
-  const onSubscribeClick = () => {
-    navigate(routePaths.PRICING, { replace: true });
-  };
+  const onPodcastClick = (episodeId) => routerService.toEpisodeDetails(episodeId);
+  const onSubscribeClick = () => routerService.toPricingSection();
 
   return (
     <SectionContainer className='pt-16 pb-35 bg-champagne'>
@@ -46,18 +39,16 @@ const HeroSection = () => {
             image={image?.data?.attributes?.url}
             availablePlatforms={platforms}
             key={id}
-            className='w-[373px] mb-5 mr-5 h-[373px]'
+            className='w-96 h-96 mb-5 mr-5'
             onClick={() => onPodcastClick(id)}
           />
         ))}
       </Carousel>
-      <MaxWidthContainer customClassName='border-y-2 border-grey py-11'>
-        <div className='flex justify-between items-center pr-19'>
-          <div className='text-23 leading-140 font-bold tracking-tighter mr-33'>Supported by:</div>
-          <GooglePodcastColorXL />
-          <SpotifyColorXL />
-          <YoutubeColorXL />
-        </div>
+      <MaxWidthContainer customClassName='border-y-2 border-grey py-11 flex justify-between items-center pr-19'>
+        <div className='text-23 leading-140 font-bold tracking-tighter mr-33'>Supported by:</div>
+        <GooglePodcastColorXL />
+        <SpotifyColorXL />
+        <YoutubeColorXL />
       </MaxWidthContainer>
     </SectionContainer>
   );

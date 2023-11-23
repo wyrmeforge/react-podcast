@@ -3,19 +3,21 @@ import Button from '../../../components/Button.jsx';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 
-const InfoBlock = ({ count, text }) => {
-  return (
-    <div className='w-[373px] h-[235px] rounded-8 border-[1.5px] flex flex-col justify-center items-center mr-5 bg-white drop-shadow-hoverXlRed transition-all'>
-      <div className='text-60 leading-120 tracking-tighter font-bold text-vermillion mb-5'>
-        {count}
-        <span className='text-black uppercase'>k</span>
-      </div>
-      <div className='text-grey'>{text}</div>
-    </div>
-  );
-};
-
 const HeroSection = () => {
+  const appInfo = [
+    {
+      text: 'Community Members',
+      count: 76,
+    },
+    {
+      text: 'Podcast Subscribers',
+      count: 143,
+    },
+    {
+      text: 'Daily Listeners',
+      count: 2,
+    },
+  ];
   return (
     <SectionContainer className='pt-16 pb-[116px] bg-champagne'>
       <MaxWidthContainer customClassName='flex flex-col items-center text-center relative overflow-visible'>
@@ -23,19 +25,28 @@ const HeroSection = () => {
           About <br /> <span className='text-vermillion'>Pod of Cast</span>
         </h1>
         <p className='mb-15 max-w-[766px] text-grey text-16'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam–quis.
+          Welcome to Pod of Cast, where we explore the fascinating world of podcasts. Join us on a
+          journey of discovery as we delve into diverse topics and conversations.
         </p>
         <div className='flex pb-35'>
           <Button className='mr-5 bg-champagne px-9' bordered xl>
-            BECOME SPONSOR
+            Become sponsor
           </Button>
           <Button xl>Subscribe</Button>
         </div>
-        <div className='flex items-center absolute bottom-[-43%] z-30'>
-          <InfoBlock count={76} text='Community Members' />
-          <InfoBlock count={123} text='Podcast Subscribers' />
-          <InfoBlock count={39} text='Daily Listeners' />
+        <div className='flex items-center absolute bottom-[-42%] z-30'>
+          {appInfo?.map(({ text, count }, idx) => (
+            <div
+              key={idx}
+              className='w-[373px] h-[235px] rounded-8 border-2 flex flex-col justify-center items-center mr-5 bg-white drop-shadow-hoverXlRed transition-all'
+            >
+              <div className='text-60 leading-120 tracking-tighter font-bold text-vermillion mb-5'>
+                {count}
+                <span className='text-black uppercase'>k</span>
+              </div>
+              <div className='text-grey'>{text}</div>
+            </div>
+          ))}
         </div>
       </MaxWidthContainer>
     </SectionContainer>

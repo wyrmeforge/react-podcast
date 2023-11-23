@@ -9,12 +9,19 @@ export const GET_ALL_PODCASTS = gql(`
          title
          publishedAt
          description
-         tags
          episodeTime
          episode
          platforms
          url
          isFeatured
+          tags {
+            data {
+              id
+              attributes {
+                name
+              }
+          }
+        }
          image {
              data {
                attributes {

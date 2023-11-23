@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowDownIcon, LogoIcon } from './Icons/index.js';
 import { tcl } from '../utils/styles.js';
 import Dropdown from './Dropdown.jsx';
-import * as routePaths from '../consts/router/routerPaths.js';
+import * as routePaths from '../consts/routerPaths.js';
 
 const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) => {
   if (!isVisible) return;
@@ -37,7 +37,7 @@ const NavContent = ({ navLinks, expanded }) => {
       {visibleLinks.map(renderNavLink)}
       {expanded && (
         <Dropdown
-          menuClassName='bg-champagne p-3 rounded-4 border drop-shadow-hoverXlRed mt-2'
+          menuClassName='bg-champagne p-3 rounded-4 border-2 border-[rgba(0,0,0,.25)] drop-shadow-hover mt-2'
           trigger={
             <div className='flex items-center hover:cursor-pointer'>
               <span className='mr-[6px]'>More</span> <ArrowDownIcon />

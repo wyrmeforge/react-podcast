@@ -10,15 +10,17 @@ const PodcastCover = ({ title, image, availablePlatforms, className, iconClassNa
   );
 
   const platformIcons = {
-    googlePodcast: <GooglePodcastWhite key={1} />,
-    youtube: <YoutubeWhite key={2} />,
-    spotify: <SpotifyWhite key={3} />,
+    googlePodcast: <GooglePodcastWhite />,
+    youtube: <YoutubeWhite />,
+    spotify: <SpotifyWhite />,
   };
 
   return (
     <div className={containerClasses} onClick={onClick}>
       <div className={tcl('flex justify-between gap-4 self-end z-30', iconClassName)}>
-        {availablePlatforms?.map((platform) => platformIcons[platform])}
+        {availablePlatforms?.map((platform, idx) => (
+          <React.Fragment key={idx}>{platformIcons[platform]}</React.Fragment>
+        ))}
       </div>
       <div className='font-bold text-left text-37 leading-140 tracking-[-0.08em] text-blue z-30'>
         {title}

@@ -9,25 +9,25 @@ import {
 import Divider from '../../../components/Divider.jsx';
 
 const SponsorCard = ({ icon, text }) => (
-  <div className='border-2 rounded-12 py-10 flex flex-col relative bg-white w-[570px] items-center px-10 h-[245px] mr-5'>
+  <div className='border-2 rounded-12 py-10 flex flex-col relative bg-white w-[570px] text-left items-center px-10 h-[245px] mr-5'>
     {icon}
-    <Divider className='mt-5 mb-[30px]' />
-    <div className='text-14 text-grey font-medium leading-160'>{text}</div>
+    <Divider className='mt-5 mb-8' />
+    <div className='text-14 text-grey leading-160'>{text}</div>
   </div>
 );
 
 const SponsorSection = () => {
   const sponsorsData = [
     {
-      text: 'Quis dictum cursus faucibus mattis dignissim. Pellentes que purus in sed sodales in mauris molestie. Eleifend estcon sctetur interdum eu in auctor. Gravida leo et.',
+      text: 'Join us in extending a warm welcome to our esteemed sponsors. Their support empowers us to bring you high-quality content and exciting episodes. We are grateful for their partnership on this podcasting journey.',
       icon: <GooglePodcastColorXL />,
     },
     {
-      text: 'Quis dictum cursus faucibus mattis dignissim. Pellentes que purus in sed sodales in mauris molestie. Eleifend estcon sctetur interdum eu in auctor. Gravida leo et.',
+      text: 'A big shoutout to our incredible sponsors! Their commitment to our podcast enhances your listening experience. Discover the impact of their support as we explore a diverse range of engaging topics together.',
       icon: <SpotifyColorXL />,
     },
     {
-      text: 'Quis dictum cursus faucibus mattis dignissim. Pellentes que purus in sed sodales in mauris molestie. Eleifend estcon sctetur interdum eu in auctor. Gravida leo et.',
+      text: 'Cheers to our valued sponsors who make this podcast possible. Their dedication fuels our passion for delivering top-notch content. Explore the world of podcasts with us, supported by these amazing partners.',
       icon: <YoutubeColorXL />,
     },
   ];
@@ -39,8 +39,8 @@ const SponsorSection = () => {
       className='bg-champagne'
     >
       <Carousel arrowClassName='-bottom-25' arrows className='pl-35 flex'>
-        {sponsorsData.map((sponsor, idx) => (
-          <SponsorCard key={idx} icon={sponsor?.icon} text={sponsor?.text} />
+        {sponsorsData.map(({ icon, text }, idx) => (
+          <SponsorCard key={idx} icon={icon} text={text} />
         ))}
       </Carousel>
     </SectionContainer>
