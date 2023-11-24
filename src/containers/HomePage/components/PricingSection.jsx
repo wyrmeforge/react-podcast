@@ -120,7 +120,7 @@ const PricingSection = ({ id }) => {
       subtitle='Get exclusive episodes, merch and more'
     >
       {isMobile ? (
-        <Carousel centerMode>
+        <Carousel initialSlide={1} centerMode centerPadding={0}>
           {rates?.map((item, idx) => (
             <Rates key={idx} {...item} />
           ))}

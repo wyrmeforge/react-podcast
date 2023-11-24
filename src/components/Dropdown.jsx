@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { tcl } from '../utils/styles.js';
 import useOutsideClick from '../hooks/useOutsideClick.js';
 
-const Dropdown = ({ trigger, menu, menuClassName }) => {
+const Dropdown = ({ trigger, menu, menuClassName, listItemClassName, handleIsOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const ref = useRef(null);
@@ -10,6 +10,10 @@ const Dropdown = ({ trigger, menu, menuClassName }) => {
   useOutsideClick(ref, () => {
     setIsOpen(false);
   });
+
+  useEffect(() => {
+    handleIsOpen(isOpen);
+  }, [isOpen]);
 
   return (
     <div className='relative' ref={ref}>
@@ -19,7 +23,7 @@ const Dropdown = ({ trigger, menu, menuClassName }) => {
       {isOpen ? (
         <ul className={tcl('absolute flex flex-col z-20', menuClassName)}>
           {menu?.map((menuItem, idx) => (
-            <li className='mb-1' key={idx}>
+            <li className={tcl('mb-1', listItemClassName)} key={idx}>
               {React.cloneElement(menuItem, {
                 onClick: () => {
                   menuItem?.props?.onClick?.();

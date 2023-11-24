@@ -6,6 +6,7 @@ import CarouselArrow from './CarouselArrow.jsx';
 const Carousel = ({
   children,
   centerMode,
+  initialSlide = 0,
   arrowClassName,
   infinite,
   autoplay,
@@ -16,6 +17,7 @@ const Carousel = ({
   const options = {
     centerMode,
     infinite,
+    initialSlide,
     autoplay,
     centerPadding,
     arrows,

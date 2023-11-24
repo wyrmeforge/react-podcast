@@ -6,7 +6,7 @@ const CarouselArrow = ({ isNext, onClick, arrowClassName }) => {
   const arrowClasses = tcl(
     'absolute bottom-0 group transition-all',
     {
-      'left-[210px]': isNext,
+      'right-[5%] md:right-0 md:left-[210px]': isNext,
       'rotate-180 ': !isNext,
     },
     arrowClassName,

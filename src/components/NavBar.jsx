@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDownIcon, LogoIcon } from './Icons/index.js';
 import { tcl } from '../utils/styles.js';
 import Dropdown from './Dropdown.jsx';
 import * as routePaths from '../consts/routerPaths.js';
+import useIsMobile from '../hooks/useIsMobile.js';
+import BurgerMenu from './BurgerMenu.jsx';
 
 const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) => {
   if (!isVisible) return;
@@ -20,6 +22,7 @@ const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) =>
 };
 
 const NavContent = ({ navLinks, expanded }) => {
+  const [isMenuVisible, setMenuVisible] = useState(false);
   const visibleLinks = expanded ? navLinks.slice(0, 3) : navLinks;
 
   const renderNavLink = (link, idx) => (
@@ -32,18 +35,37 @@ const NavContent = ({ navLinks, expanded }) => {
     />
   );
 
+  const isMobile = useIsMobile();
+
+  const menuClasses = tcl(
+    {
+      'fixed left-0 top-0 bg-white pl-10 pt-20 w-full h-full z-30': isMobile,
+      open: isMenuVisible,
+    },
+    {
+      'bg-champagne p-3 rounded-4 border-2 border-[rgba(0,0,0,.25)] drop-shadow-hover mt-2':
+        !isMobile,
+    },
+  );
+
   return (
     <>
-      {visibleLinks.map(renderNavLink)}
-      {expanded && (
+      {isMobile ? <NavLink to='/' element={<LogoIcon />} /> : visibleLinks.map(renderNavLink)}
+      {(expanded || isMobile) && (
         <Dropdown
-          menuClassName='bg-champagne p-3 rounded-4 border-2 border-[rgba(0,0,0,.25)] drop-shadow-hover mt-2'
+          listItemClassName={tcl({ 'mb-8 text-37': isMobile })}
+          menuClassName={menuClasses}
+          handleIsOpen={setMenuVisible}
           trigger={
-            <div className='flex items-center hover:cursor-pointer'>
-              <span className='mr-[6px]'>More</span> <ArrowDownIcon />
-            </div>
+            isMobile ? (
+              <BurgerMenu isOpen={isMenuVisible} />
+            ) : (
+              <div className='flex items-center hover:cursor-pointer'>
+                <span className='mr-[6px]'>More</span> <ArrowDownIcon />
+              </div>
+            )
           }
-          menu={navLinks.slice(3).map(renderNavLink)}
+          menu={navLinks.slice(isMobile ? 1 : 3).map(renderNavLink)}
         />
       )}
     </>
@@ -62,7 +84,12 @@ const NavBar = ({ expanded = false, className }) => {
   ];
 
   return (
-    <nav className={tcl('flex font-bold items-center', className)}>
+    <nav
+      className={tcl(
+        'flex justify-between w-full md:justify-normal font-bold items-center',
+        className,
+      )}
+    >
       <NavContent navLinks={navLinks} expanded={expanded} />
     </nav>
   );
