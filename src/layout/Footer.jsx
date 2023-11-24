@@ -16,15 +16,15 @@ import {
 
 const Footer = () => {
   return (
-    <footer className='w-full border-t-2 border-t-grey bg-white pt-35 pb-20 text-grey'>
+    <footer className='w-full border-t-2 border-t-grey bg-white pt-20 md:pt-35 pb-20 text-grey'>
       <MaxWidthContainer>
-        <div className='flex justify-between'>
+        <div className='flex flex-col md:flex-row justify-between'>
           <div className='w-full'>
-            <div className='flex items-end mb-10'>
+            <div className='flex items-end mb-5 md:mb-10'>
               <LogoIcon />
               <span className='ml-6 text-12 '>&copy;2023.</span>
             </div>
-            <div className='text-14 max-w-[275px] mb-10'>
+            <div className='text-14 max-w-[275px] mb-5 md:mb-10'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </div>
             <div className='flex max-w-[122px] justify-between w-full'>
@@ -33,10 +33,10 @@ const Footer = () => {
               <TikTokIcon />
             </div>
           </div>
-          <NavBar className='grid w-full h-full grid-cols-2 grid-rows-3 gap-5 text-black' />
+          <NavBar className='my-10 md:my-0 grid w-full h-full grid-cols-2 grid-rows-3 gap-5 text-black' />
           <div className='w-full'>
             <div className='mb-5'>Listen episodes on your fav platform:</div>
-            <div className='flex max-w-[373px] justify-between w-full mb-15'>
+            <div className='flex max-w-[373px] justify-between w-full mb-5 md:mb-15'>
               <GooglePodcastColorM />
               <SpotifyColorM />
               <YoutubeColorM />
@@ -48,9 +48,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <Divider className='mb-5 mt-35' />
-        <div className='text-12 flex justify-between'>
-          <div>
+        <Divider className='mb-5 mt-10 md:mt-35' />
+        <div className='text-12 md:flex md:justify-between'>
+          <div className='mb-5 md:mb-0'>
             &#64;2022. All Rights Reserved. <span className='text-vermillion'>Pod of Cast</span>
           </div>
           <div>Terms • Privacy</div>

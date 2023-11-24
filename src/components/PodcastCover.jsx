@@ -25,7 +25,7 @@ const PodcastCover = ({ title, image, availablePlatforms, className, iconClassNa
       <div className='font-bold text-left text-37 leading-140 tracking-[-0.08em] text-blue z-30'>
         {title}
       </div>
-      <Image src={image} className='w-full h-full absolute left-0 top-0 rounded-12' />
+      <Image src={image} className='w-full h-full object-cover absolute left-0 top-0 rounded-12' />
     </div>
   );
 };

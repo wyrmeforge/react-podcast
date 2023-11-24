@@ -54,14 +54,14 @@ const FeaturesSection = ({ id }) => {
       title='Membership benefits'
       subtitle='Become our sponsor and get all benefits'
     >
-      <MaxWidthContainer customClassName='grid grid-cols-3 grid-rows-2 gap-x-5 gap-y-20 mb-25'>
+      <MaxWidthContainer customClassName='grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-x-5 gap-y-5 md:gap-y-20 mb-15 md:mb-25'>
         {features?.map(({ icon, title, subtitle }, idx) => (
           <div key={idx} className='flex flex-col items-center max-w-[373px]'>
             {icon}
-            <div className='text-23 font-bold leading-140 tracking-tighter mt-8 mb-[10px]'>
+            <div className='text-14 md:text-23 font-bold leading-140 tracking-tighter mt-8 mb-[10px]'>
               {title}
             </div>
-            <p className='font-medium text-16 leading-160'>{subtitle}</p>
+            <p className='text-12 font-medium md:text-16 leading-160'>{subtitle}</p>
           </div>
         ))}
       </MaxWidthContainer>

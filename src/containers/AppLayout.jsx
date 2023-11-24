@@ -13,6 +13,7 @@ import reviewsService from '../services/reviewsService/reviewsService.js';
 import { setReviews } from '../store/reviews/reviewsSlice.js';
 import tagsService from '../services/tagsService/tagsService.js';
 import { setTags } from '../store/tags/tagsSlice.js';
+import useLayout from '../hooks/useIsMobile.js';
 
 const AppLayout = () => {
   const [isAppLoaded, setIsAppLoaded] = useState(false);
@@ -35,6 +36,7 @@ const AppLayout = () => {
   }, []);
 
   useScrollToTop();
+  useLayout();
 
   return (
     <ErrorBoundary>

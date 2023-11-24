@@ -15,11 +15,10 @@ const TestimonialsSection = ({ id }) => {
     <SectionContainer
       id={id}
       title='What our listeners say'
-      titleWithIcon
       subtitle='Their experience throughout every platform'
-      className='bg-alice pb-[208px]'
+      className='bg-alice pb-[108px] md:pb-[208px]'
     >
-      <Carousel arrows arrowClassName='-bottom-25' className='pl-35 flex'>
+      <Carousel arrows arrowClassName='-bottom-15 md:-bottom-25' className='pl-10 md:pl-35 flex'>
         {reviews?.map(({ id, attributes: { text, userName, platform, userAvatar } }) => (
           <Quote
             key={id}
@@ -27,8 +26,8 @@ const TestimonialsSection = ({ id }) => {
             username={userName}
             platformIcon={platformIcons[platform]}
             avatarSrc={userAvatar?.data?.attributes?.url}
-            textClassName='py-8 px-0 max-w-none text-23 leading-160 font-medium text-left'
-            className='bg-white w-[570px] rounded-8 items-start px-10 h-90 mr-5 justify-between'
+            textClassName='py-4 md:py-8 text-16 px-0 max-w-none md:text-23 leading-160 font-medium text-left'
+            className='bg-white px-5 w-[300px] h-[240px] md:w-[570px] rounded-8 items-start md:px-10 md:h-90 mr-5 justify-between'
           />
         ))}
       </Carousel>

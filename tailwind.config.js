@@ -3,7 +3,6 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      xs: '340px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
@@ -30,6 +29,9 @@ export default {
       montsalt: 'MontserratAlternates',
     },
     extend: {
+      fontSize: {
+        30: '30px',
+      },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
       },
@@ -50,6 +52,7 @@ export default {
         35: '140px',
         40: '160px',
         52: '208px',
+        80: '320px',
         90: '360px',
         290: '1160px',
       },

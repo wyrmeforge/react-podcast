@@ -6,12 +6,15 @@ import Button from '../../../components/Button.jsx';
 import { useSelector } from 'react-redux';
 import { selectAllPodcasts } from '../../../store/podcast/podcastsSelector.js';
 import routerService from '../../../services/routerService.js';
+import useIsMobile from '../../../hooks/useIsMobile.js';
 
 const ContentSection = ({ id }) => {
   const podcasts = useSelector(selectAllPodcasts);
 
   const onCardClick = (episodeId) => routerService.toEpisodeDetails(episodeId);
   const onBrowseClick = () => routerService.toEpisodesPage();
+
+  const isMobile = useIsMobile();
 
   return (
     <SectionContainer
@@ -21,8 +24,8 @@ const ContentSection = ({ id }) => {
       className='bg-champagne'
     >
       <MaxWidthContainer>
-        <div className='grid grid-cols-2 gap-5 mb-25'>
-          {podcasts?.map(({ attributes, id }) => (
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mb-15 md:mb-25'>
+          {podcasts?.slice(0, isMobile ? 2 : 6).map(({ attributes, id }) => (
             <EpisodeCard onClick={() => onCardClick(id)} key={id} {...attributes} />
           ))}
         </div>

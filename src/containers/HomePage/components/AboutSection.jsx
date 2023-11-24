@@ -29,21 +29,24 @@ const AboutSection = () => {
 
   return (
     <SectionContainer
-      titleClassName='mb-25 max-w-[735px]'
+      titleClassName='mb-10 md:mb-25 md:max-w-[735px]'
       title='Talk. Listen. Get inspired by every minute of it.'
     >
       <MaxWidthContainer>
-        <div className='flex justify-between'>
+        <div className='flex flex-col md:flex-row justify-between'>
           {sectionInfo?.map(({ text, image }, idx) => (
-            <div key={idx} className='flex flex-col justify-center items-center'>
-              <Image src={image} alt={text} />
-              <div className='max-w-[472px] mt-10'>{text}</div>
+            <div
+              key={idx}
+              className='flex mb-10 text-left md:mb-0 md:text-center md:flex-col justify-center items-center'
+            >
+              <Image className='w-[35%] md:w-auto' src={image} alt={text} />
+              <div className='ml-5 text-14 md:ml-0 md:text-16 md:mt-10'>{text}</div>
             </div>
           ))}
         </div>
         {review ? (
           <Quote
-            className='mt-30'
+            className='md:mt-30'
             text={text}
             avatarSrc={userAvatar?.data?.attributes?.url}
             username={userName}
