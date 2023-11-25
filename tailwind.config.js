@@ -35,9 +35,6 @@ export default {
       animation: {
         'spin-slow': 'spin 3s linear infinite',
       },
-      backgroundImage: {
-        sparkle: "url('src/assets/images/Sparkle.svg')",
-      },
       maxWidth: {
         content: '1160px',
       },

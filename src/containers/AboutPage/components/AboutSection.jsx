@@ -10,11 +10,15 @@ import { InstagramIcon, TikTokIcon, TwitterIcon } from '../../../components/Icon
 
 const HostInfo = ({ image, name, text, number }) => (
   <div className=' md:w-[570px] mb-10 last:mb-0 h-[520px] bg-white rounded-8 border-2 p-4 flex flex-col md:flex-row justify-between drop-shadow-dark'>
-    <Image className='rounded-8 max-h-[50%] object-cover mb-5 md:mb-0' src={image} alt={name} />
+    <Image
+      className='rounded-8 max-h-[50%] md:max-h-full object-cover mb-5 md:mb-0'
+      src={image}
+      alt={name}
+    />
     <div className='flex flex-col justify-end font-medium text-14 leading-160 text-left ml-5'>
       <div className='mb-[6px] text-black'>Host {number}</div>
       <div className='font-bold text-30 md:text-37 leading-none tracking-tighter mb-5'>{name}</div>
-      <p className='text-grey text-12 md:text-16'>{text}</p>
+      <p className='text-grey text-12 md:text-14'>{text}</p>
       <Divider className='mt-5 mb-[10px]' />
       <div className='flex justify-end'>
         <div className='text-12 text-grey font-bold mr-5'>follow me:</div>

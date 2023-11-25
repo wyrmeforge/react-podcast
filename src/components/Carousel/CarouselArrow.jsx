@@ -13,7 +13,7 @@ const CarouselArrow = ({ isNext, onClick, arrowClassName }) => {
   );
 
   return (
-    <button tabIndex={0} onClick={onClick} className={arrowClasses}>
+    <button aria-label='arrow button' tabIndex={0} onClick={onClick} className={arrowClasses}>
       <ArrowIcon className='group-hover:[&_path]:stroke-vermillion' />
     </button>
   );

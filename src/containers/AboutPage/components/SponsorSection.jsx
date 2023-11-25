@@ -9,7 +9,7 @@ import {
 import Divider from '../../../components/Divider.jsx';
 
 const SponsorCard = ({ icon, text }) => (
-  <div className='border-2 rounded-12 py-10 flex flex-col relative bg-white w-[370px] md:w-[570px] text-left items-center px-10 h-[245px] mr-5'>
+  <div className='border-2 rounded-12 p-6 flex flex-col relative bg-white w-[370px] md:w-[570px] text-left items-center h-[245px] mr-5'>
     {icon}
     <Divider className='my-3 md:mt-5 md:mb-8' />
     <div className='text-12 md:text-14 text-grey leading-160'>{text}</div>

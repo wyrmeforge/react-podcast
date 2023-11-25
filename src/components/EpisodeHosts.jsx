@@ -9,6 +9,7 @@ const EpisodeHosts = ({ hosts, showNames }) => {
     <div className='text-14 text-grey flex items-center'>
       {hosts?.map(({ image }, idx) => (
         <Image
+          alt={name}
           key={idx}
           className={tcl('w-9 h-9 rounded-full border-2 border-white mr-[10px]', {
             '-ml-6': idx !== 0,

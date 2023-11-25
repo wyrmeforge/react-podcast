@@ -35,7 +35,7 @@ const HeroSection = () => {
           </Button>
           <Button xl>Subscribe</Button>
         </div>
-        <div className='flex items-center md:absolute md:bottom-[-20%] md:bottom-[-42%] md:z-30'>
+        <div className='flex items-center md:absolute md:bottom-[-42%] md:z-30'>
           {appInfo?.map(({ text, count }, idx) => (
             <div
               key={idx}

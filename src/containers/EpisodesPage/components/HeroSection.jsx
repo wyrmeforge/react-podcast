@@ -76,10 +76,10 @@ const HeroSection = ({ podcastId }) => {
   };
 
   return (
-    <SectionContainer withScribble={false} className='bg-champagne !pt-10  md:!pt-25 !pb-10'>
+    <SectionContainer withScribble={false} className='bg-champagne !pt-10 md:!pt-25 !pb-10'>
       <MaxWidthContainer>
         <div className='flex flex-col md:flex-row items-center z-20 mb-10 md:mb-20'>
-          <div className='h-[350px] md:h-[472px] w-full mb-10 md:mb-0 md:min-w-[472px] md:mr-[118px] drop-shadow-cover'>
+          <div className='h-[350px] md:h-[472px] w-full mb-10 md:mb-0 md:max-w-[520px]  md:mr-[118px] drop-shadow-cover'>
             {isPlayerVisible ? (
               <VideoPlayer
                 url={url}
@@ -88,7 +88,11 @@ const HeroSection = ({ podcastId }) => {
                 isVisible={isPlayerVisible}
               />
             ) : (
-              <PodcastCover className='h-full w-full' image={image?.data?.attributes?.url} />
+              <PodcastCover
+                alt={title}
+                className='h-full w-full'
+                image={image?.data?.attributes?.url}
+              />
             )}
           </div>
           <div className='w-full md:w-auto'>
@@ -102,7 +106,7 @@ const HeroSection = ({ podcastId }) => {
               <EpisodeHosts hosts={hosts} showNames />
               <div className='text-14 mt-2 md:mt-0 text-grey'>{formatTimestamp(publishedAt)}</div>
             </div>
-            <div className='flex flex-col'>
+            <div className='flex flex-col md:flex-row'>
               <Button className='mb-5 md:mb-0 md:mr-5' xl={!isMobile}>
                 Subscribe
               </Button>

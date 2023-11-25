@@ -22,49 +22,36 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/uploads/perplexed_mind_7ff66e2b88.png",
-                "alternativeText": null,
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
+                "url": "/src/assets/images/perplexed_mind_podcast_bg.jpg",
+                "alternativeText": null
+              }
+            }
           },
           "hosts": [
             {
               "image": {
                 "data": {
                   "attributes": {
-                    "url": "/uploads/Jane_Doe_533776062f.png",
-                    "alternativeText": null,
-                    "__typename": "UploadFile"
-                  },
-                  "__typename": "UploadFileEntity"
-                },
-                "__typename": "UploadFileEntityResponse"
+                    "url": "/src/assets/images/avatar.jpg",
+                    "alternativeText": null
+                  }
+                }
               },
-              "name": "Jane ",
-              "__typename": "ComponentComponentsHost"
+              "name": "Jane"
             },
             {
               "image": {
                 "data": {
                   "attributes": {
-                    "url": "/uploads/Jane_Doe_533776062f.png",
-                    "alternativeText": null,
-                    "__typename": "UploadFile"
-                  },
-                  "__typename": "UploadFileEntity"
-                },
-                "__typename": "UploadFileEntityResponse"
+                    "url": "/src/assets/images/avatar.jpg",
+                    "alternativeText": null
+                  }
+                }
               },
-              "name": "Estriper",
-              "__typename": "ComponentComponentsHost"
+              "name": "John"
             }
-          ],
-          "__typename": "Podcast"
-        },
-        "__typename": "PodcastEntity"
+          ]
+        }
       },
       {
         "id": "2",
@@ -84,18 +71,13 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/uploads/covid_19_endemic_ae995d5434.png",
-                "alternativeText": null,
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
+                "url": "/src/assets/images/pandemic_podcast_bg.jpg",
+                "alternativeText": null
+              }
+            }
           },
-          "hosts": [],
-          "__typename": "Podcast"
-        },
-        "__typename": "PodcastEntity"
+          "hosts": []
+        }
       },
       {
         "id": "3",
@@ -114,18 +96,13 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/uploads/tesla_autopilot_4d50956d0c.png",
-                "alternativeText": null,
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
+                "url": "/src/assets/images/tesla_podcast_bg.jpg",
+                "alternativeText": null
+              }
+            }
           },
-          "hosts": [],
-          "__typename": "Podcast"
-        },
-        "__typename": "PodcastEntity"
+          "hosts": []
+        }
       },
       {
         "id": "4",
@@ -148,18 +125,13 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/uploads/womens_rights_6ec2ae761c.png",
-                "alternativeText": null,
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
+                "url": "/src/assets/images/womens_podcast_bg.jpg",
+                "alternativeText": null
+              }
+            }
           },
-          "hosts": [],
-          "__typename": "Podcast"
-        },
-        "__typename": "PodcastEntity"
+          "hosts": []
+        }
       },
       {
         "id": "5",
@@ -180,18 +152,13 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/uploads/self_confidence_972bc7f7de.png",
-                "alternativeText": null,
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
+                "url": "/src/assets/images/self_confidence_podcast_bg.jpg",
+                "alternativeText": null
+              }
+            }
           },
-          "hosts": [],
-          "__typename": "Podcast"
-        },
-        "__typename": "PodcastEntity"
+          "hosts": []
+        }
       },
       {
         "id": "6",
@@ -212,21 +179,15 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/uploads/social_class_704649521f.png",
-                "alternativeText": null,
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
+                "url": "/src/assets/images/social_classes_podcast_bg.jpg",
+                "alternativeText": null
+              }
+            }
           },
-          "hosts": [],
-          "__typename": "Podcast"
-        },
-        "__typename": "PodcastEntity"
+          "hosts": []
+        }
       }
-    ],
-    "__typename": "PodcastEntityResponseCollection"
+    ]
   },
   "reviews": {
     "data": [
@@ -239,16 +200,11 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/uploads/Emily_Blunt_8d040c743b.png",
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
-          },
-          "__typename": "Review"
-        },
-        "__typename": "ReviewEntity"
+                "url": "/src/assets/images/avatar.jpg"
+              }
+            }
+          }
+        }
       },
       {
         "id": "2",
@@ -259,16 +215,11 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/uploads/Luna_Lovegood_2275451b22.png",
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
-          },
-          "__typename": "Review"
-        },
-        "__typename": "ReviewEntity"
+                "url": "/src/assets/images/avatar.jpg"
+              }
+            }
+          }
+        }
       },
       {
         "id": "3",
@@ -279,79 +230,58 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/uploads/Mia_Winters_13512cae68.png",
-                "__typename": "UploadFile"
-              },
-              "__typename": "UploadFileEntity"
-            },
-            "__typename": "UploadFileEntityResponse"
-          },
-          "__typename": "Review"
-        },
-        "__typename": "ReviewEntity"
+                "url": "/src/assets/images/avatar.jpg"
+              }
+            }
+          }
+        }
       }
-    ],
-    "__typename": "ReviewEntityResponseCollection"
+    ]
   },
   "tags": {
     "data": [
       {
         "id": "2",
         "attributes": {
-          "name": "all",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "all"
+        }
       },
       {
         "id": "3",
         "attributes": {
-          "name": "business",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "business"
+        }
       },
       {
         "id": "4",
         "attributes": {
-          "name": "comedy",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "comedy"
+        }
       },
       {
         "id": "5",
         "attributes": {
-          "name": "education",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "education"
+        }
       },
       {
         "id": "6",
         "attributes": {
-          "name": "health",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "health"
+        }
       },
       {
         "id": "7",
         "attributes": {
-          "name": "news",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "news"
+        }
       },
       {
         "id": "8",
         "attributes": {
-          "name": "tech",
-          "__typename": "Tag"
-        },
-        "__typename": "TagEntity"
+          "name": "tech"
+        }
       }
-    ],
-    "__typename": "TagEntityResponseCollection"
+    ]
   }
 }

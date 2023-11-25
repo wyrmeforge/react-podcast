@@ -38,7 +38,7 @@ const EpisodesSection = ({ podcastId, setCurrentEpisodeId }) => {
 
   return (
     <SectionContainer
-      className={tcl({ 'pt-10 bg-champagne': !podcastId })}
+      className={tcl({ '!pt-10 bg-champagne': !podcastId })}
       titleClassName='mb-10 md:mb-25'
       title='Latest Episode'
     >

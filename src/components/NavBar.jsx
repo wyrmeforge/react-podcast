@@ -7,7 +7,7 @@ import * as routePaths from '../consts/routerPaths.js';
 import useIsMobile from '../hooks/useIsMobile.js';
 import BurgerMenu from './BurgerMenu.jsx';
 
-const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) => {
+const NavLink = ({ onClick, isVisible = true, to, element, customClassName, ariaLabel }) => {
   if (!isVisible) return;
 
   return (
@@ -15,6 +15,7 @@ const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) =>
       className={tcl('hover:cursor-pointer hover:text-vermillion mr-15 last:mr-0', customClassName)}
       onClick={onClick}
       to={to}
+      aria-label={ariaLabel}
     >
       {element}
     </Link>
@@ -27,6 +28,7 @@ const NavContent = ({ navLinks, isFooter }) => {
 
   const renderNavLink = (link, idx) => (
     <NavLink
+      ariaLabel={link?.ariaLabel}
       isVisible={link.isVisible}
       key={idx}
       to={link.to}
@@ -78,7 +80,13 @@ const NavContent = ({ navLinks, isFooter }) => {
 
 const NavBar = ({ isFooter = false, className }) => {
   const navLinks = [
-    { to: '/', element: <LogoIcon />, className: 'mr-[123px]', isVisible: !isFooter },
+    {
+      to: '/',
+      element: <LogoIcon />,
+      className: 'mr-[123px]',
+      ariaLabel: 'Link to home page',
+      isVisible: !isFooter,
+    },
     { to: routePaths.EPISODES, element: 'Episodes' },
     { to: routePaths.ABOUT_PAGE, element: 'About' },
     { to: routePaths.PRICING, element: 'Pricing' },
