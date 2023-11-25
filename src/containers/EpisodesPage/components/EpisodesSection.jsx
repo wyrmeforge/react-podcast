@@ -26,7 +26,7 @@ const EpisodesSection = ({ podcastId, setCurrentEpisodeId }) => {
     id,
     label: name[0].toUpperCase() + name.slice(1, name.length),
     content: filteredEpisodes?.length ? (
-      <div className='grid grid-cols-2 gap-5'>
+      <div className='flex flex-col md:grid md:grid-cols-2 gap-5'>
         {filteredEpisodes.map(({ attributes, id }) => (
           <EpisodeCard onClick={() => setCurrentEpisodeId(id)} key={id} {...attributes} />
         ))}
@@ -39,7 +39,7 @@ const EpisodesSection = ({ podcastId, setCurrentEpisodeId }) => {
   return (
     <SectionContainer
       className={tcl({ 'pt-10 bg-champagne': !podcastId })}
-      titleClassName='mb-25'
+      titleClassName='mb-10 md:mb-25'
       title='Latest Episode'
     >
       <MaxWidthContainer>

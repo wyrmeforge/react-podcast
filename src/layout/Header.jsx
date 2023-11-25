@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className='bg-champagne py-6'>
       <MaxWidthContainer customClassName='flex items-center justify-between'>
-        <NavBar expanded />
+        <NavBar />
         {!isMobile ? (
           <div className='flex w-full items-center justify-end'>
             <Button onClick={onRecentEpisodesClick} bordered className='mr-5 bg-champagne'>

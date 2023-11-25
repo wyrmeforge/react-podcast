@@ -13,7 +13,7 @@ const EpisodeCard = ({ episode, title, tags, description, hosts, platforms, imag
       <PodcastCover
         availablePlatforms={platforms}
         iconClassName='md:scale-[0.6] md:-translate-y-1'
-        className='w-full min-w-[166px] h-[166px] bg-cover pointer-events-none mb-5 md:mb-0 md:mr-5 p-[10px]'
+        className='w-full md:min-w-[166px] h-[166px] bg-cover pointer-events-none mb-5 md:mb-0 md:mr-5 p-[10px]'
         image={image?.data?.attributes?.url}
       />
       <div className='flex flex-col text-left font-bold'>

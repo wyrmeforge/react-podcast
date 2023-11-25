@@ -9,12 +9,12 @@ import marquesKeithImage from '../../../assets/images/host_2.jpg';
 import { InstagramIcon, TikTokIcon, TwitterIcon } from '../../../components/Icons/index.js';
 
 const HostInfo = ({ image, name, text, number }) => (
-  <div className='w-[570px] h-[520px] bg-white rounded-8 border-2 p-4 flex justify-between drop-shadow-dark'>
-    <Image className='rounded-8' src={image} alt={name} />
+  <div className=' md:w-[570px] mb-10 last:mb-0 h-[520px] bg-white rounded-8 border-2 p-4 flex flex-col md:flex-row justify-between drop-shadow-dark'>
+    <Image className='rounded-8 max-h-[50%] object-cover mb-5 md:mb-0' src={image} alt={name} />
     <div className='flex flex-col justify-end font-medium text-14 leading-160 text-left ml-5'>
       <div className='mb-[6px] text-black'>Host {number}</div>
-      <div className='font-bold text-37 leading-none tracking-tighter mb-5'>{name}</div>
-      <p className='text-grey'>{text}</p>
+      <div className='font-bold text-30 md:text-37 leading-none tracking-tighter mb-5'>{name}</div>
+      <p className='text-grey text-12 md:text-16'>{text}</p>
       <Divider className='mt-5 mb-[10px]' />
       <div className='flex justify-end'>
         <div className='text-12 text-grey font-bold mr-5'>follow me:</div>
@@ -45,14 +45,14 @@ const AboutSection = () => {
     <SectionContainer
       title='What Our Listeners Say'
       subtitle='Their Experience Throughout Every Platform'
-      subtitleClassName='mb-8'
+      subtitleClassName='md:mb-8'
     >
       <MaxWidthContainer>
         <Image className='mb-15' src={bg} alt='microphone background' />
-        <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-20'>
+        <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-10 md:mb-20'>
           About and History
         </h3>
-        <div className='text-left text-grey mb-20 columns-2 gap-5'>
+        <div className='text-left text-14 md:text-16 text-grey mb-10 md:mb-20 columns-2 gap-5'>
           <p>
             Embark on a thrilling adventure with Pod of Cast, where every episode unfolds a unique
             story. Our mission is to captivate your imagination, fostering a vibrant community of
@@ -66,11 +66,11 @@ const AboutSection = () => {
             curiosity, diversity, and the shared love of great conversations.
           </p>
         </div>
-        <Divider className='mb-25' />
+        <Divider className='mb-15 md:mb-25' />
         <h3 className='font-bold text-37 leading-140 text-black tracking-tighter mb-20'>
           Founder and Main Host
         </h3>
-        <div className='flex justify-between'>
+        <div className='flex flex-col md:flex-row justify-between'>
           {hostsInfo?.map((item, idx) => (
             <HostInfo key={idx} number={idx + 1} {...item} />
           ))}

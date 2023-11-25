@@ -33,7 +33,10 @@ const Footer = () => {
               <TikTokIcon />
             </div>
           </div>
-          <NavBar className='my-10 md:my-0 grid w-full h-full grid-cols-2 grid-rows-3 gap-5 text-black' />
+          <NavBar
+            isFooter
+            className='my-10 md:my-0 grid w-full h-full grid-cols-2 grid-rows-3 gap-5 text-black'
+          />
           <div className='w-full'>
             <div className='mb-5'>Listen episodes on your fav platform:</div>
             <div className='flex max-w-[373px] justify-between w-full mb-5 md:mb-15'>

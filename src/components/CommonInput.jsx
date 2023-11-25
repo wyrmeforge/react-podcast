@@ -32,7 +32,7 @@ const CommonInput = ({
           required={required}
           disabled={disabled}
           maxLength={maxLength}
-          className='h-[165px] rounded-8 border-[1.5px] pt-5 pl-5 w-full'
+          className='h-25 md:h-[165px] rounded-8 border-[1.5px] pt-5 pl-5 w-full'
         />
       ) : (
         <input
@@ -42,7 +42,7 @@ const CommonInput = ({
           onChange={onChange}
           placeholder={placeholder}
           required={required}
-          className='h-[64px] rounded-8 border-[1.5px] pl-5'
+          className='h-12 md:h-[64px] rounded-8 border-[1.5px] pl-2 md:pl-5 placeholder:text-14 md:placeholder:text-16'
         />
       )}
     </div>

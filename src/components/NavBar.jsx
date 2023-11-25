@@ -12,7 +12,7 @@ const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) =>
 
   return (
     <Link
-      className={tcl('hover:cursor-pointer hover:text-vermillion mr-5 last:mr-0', customClassName)}
+      className={tcl('hover:cursor-pointer hover:text-vermillion mr-15 last:mr-0', customClassName)}
       onClick={onClick}
       to={to}
     >
@@ -21,9 +21,9 @@ const NavLink = ({ onClick, isVisible = true, to, element, customClassName }) =>
   );
 };
 
-const NavContent = ({ navLinks, expanded }) => {
+const NavContent = ({ navLinks, isFooter }) => {
   const [isMenuVisible, setMenuVisible] = useState(false);
-  const visibleLinks = expanded ? navLinks.slice(0, 3) : navLinks;
+  const visibleLinks = !isFooter ? navLinks.slice(0, 3) : navLinks;
 
   const renderNavLink = (link, idx) => (
     <NavLink
@@ -50,8 +50,12 @@ const NavContent = ({ navLinks, expanded }) => {
 
   return (
     <>
-      {isMobile ? <NavLink to='/' element={<LogoIcon />} /> : visibleLinks.map(renderNavLink)}
-      {(expanded || isMobile) && (
+      {isMobile && !isFooter ? (
+        <NavLink to='/' element={<LogoIcon />} />
+      ) : (
+        visibleLinks.map(renderNavLink)
+      )}
+      {!isFooter && (
         <Dropdown
           listItemClassName={tcl({ 'mb-8 text-37': isMobile })}
           menuClassName={menuClasses}
@@ -72,9 +76,9 @@ const NavContent = ({ navLinks, expanded }) => {
   );
 };
 
-const NavBar = ({ expanded = false, className }) => {
+const NavBar = ({ isFooter = false, className }) => {
   const navLinks = [
-    { to: '/', element: <LogoIcon />, className: 'mr-[123px]', isVisible: expanded },
+    { to: '/', element: <LogoIcon />, className: 'mr-[123px]', isVisible: !isFooter },
     { to: routePaths.EPISODES, element: 'Episodes' },
     { to: routePaths.ABOUT_PAGE, element: 'About' },
     { to: routePaths.PRICING, element: 'Pricing' },
@@ -90,7 +94,7 @@ const NavBar = ({ expanded = false, className }) => {
         className,
       )}
     >
-      <NavContent navLinks={navLinks} expanded={expanded} />
+      <NavContent isFooter={isFooter} navLinks={navLinks} />
     </nav>
   );
 };

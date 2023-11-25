@@ -18,8 +18,9 @@ const HeroSection = () => {
       count: 2,
     },
   ];
+
   return (
-    <SectionContainer className='pt-16 pb-[116px] bg-champagne'>
+    <SectionContainer className='md:pt-16 md:pb-[116px] bg-champagne'>
       <MaxWidthContainer customClassName='flex flex-col items-center text-center relative overflow-visible'>
         <h1 className='mb-10'>
           About <br /> <span className='text-vermillion'>Pod of Cast</span>
@@ -28,23 +29,23 @@ const HeroSection = () => {
           Welcome to Pod of Cast, where we explore the fascinating world of podcasts. Join us on a
           journey of discovery as we delve into diverse topics and conversations.
         </p>
-        <div className='flex pb-35'>
+        <div className='flex pb-15 md:pb-35'>
           <Button className='mr-5 bg-champagne px-9' bordered xl>
             Become sponsor
           </Button>
           <Button xl>Subscribe</Button>
         </div>
-        <div className='flex items-center absolute bottom-[-42%] z-30'>
+        <div className='flex items-center md:absolute md:bottom-[-20%] md:bottom-[-42%] md:z-30'>
           {appInfo?.map(({ text, count }, idx) => (
             <div
               key={idx}
-              className='w-[373px] h-[235px] rounded-8 border-2 flex flex-col justify-center items-center mr-5 bg-white drop-shadow-hoverXlRed transition-all'
+              className='w-[40%] h-[140px] md:w-[373px] md:h-[235px] rounded-8 border-2 flex flex-col justify-center items-center mr-5 bg-white drop-shadow-hoverXlRed transition-all last:mr-0'
             >
-              <div className='text-60 leading-120 tracking-tighter font-bold text-vermillion mb-5'>
+              <div className='text-30 md:text-60 leading-120 tracking-tighter font-bold text-vermillion mb-5'>
                 {count}
                 <span className='text-black uppercase'>k</span>
               </div>
-              <div className='text-grey'>{text}</div>
+              <div className='text-14 md:text-16 text-grey'>{text}</div>
             </div>
           ))}
         </div>

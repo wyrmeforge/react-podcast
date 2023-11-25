@@ -9,10 +9,10 @@ import {
 import Divider from '../../../components/Divider.jsx';
 
 const SponsorCard = ({ icon, text }) => (
-  <div className='border-2 rounded-12 py-10 flex flex-col relative bg-white w-[570px] text-left items-center px-10 h-[245px] mr-5'>
+  <div className='border-2 rounded-12 py-10 flex flex-col relative bg-white w-[370px] md:w-[570px] text-left items-center px-10 h-[245px] mr-5'>
     {icon}
-    <Divider className='mt-5 mb-8' />
-    <div className='text-14 text-grey leading-160'>{text}</div>
+    <Divider className='my-3 md:mt-5 md:mb-8' />
+    <div className='text-12 md:text-14 text-grey leading-160'>{text}</div>
   </div>
 );
 
@@ -38,7 +38,7 @@ const SponsorSection = () => {
       subtitle='Check out our current official sponsors'
       className='bg-champagne'
     >
-      <Carousel arrowClassName='-bottom-25' arrows className='pl-35 flex'>
+      <Carousel arrowClassName='-bottom-15 md:-bottom-25' arrows className='pl-10 md:pl-35 flex'>
         {sponsorsData.map(({ icon, text }, idx) => (
           <SponsorCard key={idx} icon={icon} text={text} />
         ))}

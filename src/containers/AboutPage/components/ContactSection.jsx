@@ -35,25 +35,25 @@ const ContactSection = () => {
 
   return (
     <SectionContainer
-      subtitleClassName='mb-15'
+      subtitleClassName='md:mb-15'
       title='Get in touch'
       subtitle='Send your message to us'
     >
       <MaxWidthContainer customClassName='!max-w-[766px]'>
         <Divider className='mb-10' />
-        <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-x-5 gap-y-10'>
+        <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-x-5 gap-y-5 md:gap-y-10'>
           {formFields?.map((field) => (
             <CommonInput key={field.name} onChange={handleChange} required {...field} />
           ))}
           <div className='flex justify-between items-center w-full col-span-2'>
-            <div className='text-14 font-medium max-w-[150px] w-full text-left'>
+            <div className='text-14 font-medium w-auto md:max-w-[150px] md:w-full text-left'>
               <span className='text-vermillion'>*</span>
               required
             </div>
-            <Button type='submit' xl>
+            <Button type='submit' xl className='mx-10 md:mx-0'>
               Send message
             </Button>
-            <div className='text-14 max-w-[150px] text-left'>
+            <div className='text-12 md:text-14 max-w-[150px] text-left'>
               Viverra at port accumsan. Orci non
             </div>
           </div>

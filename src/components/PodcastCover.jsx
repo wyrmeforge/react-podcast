@@ -5,7 +5,7 @@ import Image from './Image.jsx';
 
 const PodcastCover = ({ title, image, availablePlatforms, className, iconClassName, onClick }) => {
   const containerClasses = tcl(
-    'rounded-12 p-5 flex flex-col relative justify-between hover:drop-shadow-cover hover:cursor-pointer transition-all',
+    'rounded-12 p-5 flex flex-col relative justify-between md:hover:drop-shadow-cover md:hover:cursor-pointer transition-all',
     className,
   );
 
