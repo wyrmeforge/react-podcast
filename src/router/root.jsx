@@ -26,11 +26,10 @@ const routes = [
     ],
     errorElement: <NotFound />,
   },
-  {
-    basename: '/react-podcast',
-  },
 ];
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  basename: '/react-podcast',
+});
 
 export default router;
