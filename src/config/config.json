@@ -22,7 +22,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/perplexed_mind_podcast_bg.jpg",
+                "url": "/react-podcast/perplexed_mind_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -32,7 +32,7 @@
               "image": {
                 "data": {
                   "attributes": {
-                    "url": "/avatar.jpg",
+                    "url": "/react-podcast/avatar.jpg",
                     "alternativeText": null
                   }
                 }
@@ -43,7 +43,7 @@
               "image": {
                 "data": {
                   "attributes": {
-                    "url": "/avatar.jpg",
+                    "url": "/react-podcast/avatar.jpg",
                     "alternativeText": null
                   }
                 }
@@ -71,7 +71,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/pandemic_podcast_bg.jpg",
+                "url": "/react-podcast/pandemic_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -96,7 +96,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/tesla_podcast_bg.jpg",
+                "url": "/react-podcast/tesla_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -125,7 +125,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/womens_podcast_bg.jpg",
+                "url": "/react-podcast/womens_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -152,7 +152,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/self_confidence_podcast_bg.jpg",
+                "url": "/react-podcast/self_confidence_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -179,7 +179,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/social_classes_podcast_bg.jpg",
+                "url": "/react-podcast/social_classes_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -200,7 +200,7 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/avatar.jpg"
+                "url": "/react-podcast/avatar.jpg"
               }
             }
           }
@@ -215,7 +215,7 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/avatar.jpg"
+                "url": "/react-podcast/avatar.jpg"
               }
             }
           }
@@ -230,7 +230,7 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/avatar.jpg"
+                "url": "/react-podcast/avatar.jpg"
               }
             }
           }
