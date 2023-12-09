@@ -26,6 +26,9 @@ const routes = [
     ],
     errorElement: <NotFound />,
   },
+  {
+    basename: '/react-podcast',
+  },
 ];
 
 const router = createBrowserRouter(routes);

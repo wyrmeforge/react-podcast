@@ -1,10 +1,13 @@
 {
+  "homepage": "https://github.com/wyrmeforge/react-podcast",
   "name": "react-podcast",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -14,6 +17,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.2",
     "classnames": "^2.3.2",
+    "gh-pages": "^6.1.0",
     "graphql": "^16.8.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
