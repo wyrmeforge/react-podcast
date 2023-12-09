@@ -22,7 +22,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/perplexed_mind_podcast_bg.jpg",
+                "url": "/perplexed_mind_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -32,7 +32,7 @@
               "image": {
                 "data": {
                   "attributes": {
-                    "url": "/src/assets/images/avatar.jpg",
+                    "url": "/avatar.jpg",
                     "alternativeText": null
                   }
                 }
@@ -43,7 +43,7 @@
               "image": {
                 "data": {
                   "attributes": {
-                    "url": "/src/assets/images/avatar.jpg",
+                    "url": "/avatar.jpg",
                     "alternativeText": null
                   }
                 }
@@ -71,7 +71,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/pandemic_podcast_bg.jpg",
+                "url": "/pandemic_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -96,7 +96,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/tesla_podcast_bg.jpg",
+                "url": "/tesla_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -125,7 +125,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/womens_podcast_bg.jpg",
+                "url": "/womens_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -152,7 +152,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/self_confidence_podcast_bg.jpg",
+                "url": "/self_confidence_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -179,7 +179,7 @@
           "image": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/social_classes_podcast_bg.jpg",
+                "url": "/social_classes_podcast_bg.jpg",
                 "alternativeText": null
               }
             }
@@ -200,7 +200,7 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/avatar.jpg"
+                "url": "/avatar.jpg"
               }
             }
           }
@@ -215,7 +215,7 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/avatar.jpg"
+                "url": "/avatar.jpg"
               }
             }
           }
@@ -230,7 +230,7 @@
           "userAvatar": {
             "data": {
               "attributes": {
-                "url": "/src/assets/images/avatar.jpg"
+                "url": "/avatar.jpg"
               }
             }
           }

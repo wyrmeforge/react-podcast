@@ -1,11 +1,11 @@
 import React from 'react';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 import Image from '../../../components/Image.jsx';
-import bg from '../../../assets/images/about_section_micro_bg.jpg';
+import bg from '/about_section_micro_bg.jpg';
 import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.jsx';
 import Divider from '../../../components/Divider.jsx';
-import porterSeverusImage from '../../../assets/images/host_1.jpg';
-import marquesKeithImage from '../../../assets/images/host_2.jpg';
+import porterSeverusImage from '/host_1.jpg';
+import marquesKeithImage from '/host_2.jpg';
 import { InstagramIcon, TikTokIcon, TwitterIcon } from '../../../components/Icons/index.js';
 
 const HostInfo = ({ image, name, text, number }) => (

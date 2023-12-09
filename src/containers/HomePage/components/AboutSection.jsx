@@ -3,8 +3,8 @@ import MaxWidthContainer from '../../../components/Structure/MaxWidthContainer.j
 import Image from '../../../components/Image.jsx';
 import SectionContainer from '../../../components/Structure/SectionContainer.jsx';
 import Quote from '../../../components/Quote.jsx';
-import questionsImage from '../../../assets/images/illustration_questions.png';
-import ideaImage from '../../../assets/images/illustration_idea.png';
+import questionsImage from '/illustration_questions.png';
+import ideaImage from '/illustration_idea.png';
 import { useSelector } from 'react-redux';
 import { makeSelectReviewById } from '../../../store/reviews/reviewsSelector.js';
 import { platformIcons } from '../../../components/Icons/platformIcons.jsx';
